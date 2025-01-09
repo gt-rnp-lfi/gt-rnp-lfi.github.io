@@ -2,13 +2,14 @@
   "name": "rnp-landingpage",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://gt-rnp-lfi.github.io/rnp-landingpage/",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "export": "next build && next export",
-    "deploy": "npm run build && gh-pages -d out"
+    "deploy": "next build && touch out/.nojekyll && gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.1",
