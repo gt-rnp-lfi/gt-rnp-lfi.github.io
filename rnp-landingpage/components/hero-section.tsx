@@ -48,14 +48,14 @@ export default function HeroSection() {
               ? 'left-full -translate-x-20 bottom-20'
               : 'hidden'
             : index === 0
-            ? 'left-1/4 -translate-x-1/2 bottom-32'
+            ? 'left-1/3 -translate-x-1/2 bottom-8'
             : index === 1
-            ? 'left-1/2 -translate-x-1/2 bottom-16'
-            : 'right-1/4 translate-x-1/2 bottom-32'
+            ? 'left-1/2 -translate-x-1/2 bottom-4'
+            : 'left-2/3 translate-x-1/2 bottom-8'
         } transition-all duration-300`}
         animate={isMobile ? { scale: index === currentFeature ? 1 : 0.8, opacity: index === currentFeature ? 1 : 0.6 } : {}}
       >
-        <div className="bg-white/90 backdrop-blur-sm p-6 rounded-full shadow-lg border border-purple-100 w-48 h-48 flex flex-col items-center justify-center text-center">
+        <div className="bg-white/90 backdrop-blur-sm p-6 rounded-full shadow-md border border-purple-100 w-48 h-48 flex flex-col items-center justify-center text-center">
           <Icon className="h-10 w-10 text-purple-600 mb-2" />
           <h3 className="text-sm font-semibold mb-1">{title}</h3>
           <p className="text-xs text-gray-600">{description}</p>
@@ -65,10 +65,10 @@ export default function HeroSection() {
   }
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-purple-50 to-white pt-16 overflow-hidden">
+    <div className="relative h-[75vh] flex flex-col justify-between pt-16 pb-36 bg-gradient-to-b from-purple-50 to-white overflow-hidden">
       {/* Floating Feature Circles */}
       <motion.div 
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-x-0 bottom-0 h-96 pointer-events-none"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
@@ -81,7 +81,7 @@ export default function HeroSection() {
       </motion.div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10 flex-1 flex items-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
