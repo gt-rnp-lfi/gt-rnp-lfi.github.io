@@ -1,3 +1,4 @@
+import 'global.css'
 import NavBar from '../components/nav-bar'
 import HeroSection from '../components/hero-section'
 import ContextSection from '../components/context-section'
