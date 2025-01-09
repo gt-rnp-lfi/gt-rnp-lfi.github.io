@@ -1,9 +1,7 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  output: 'export', // Exporta o site como estático
-  basePath: '/gt-rnp-lfi.github.io', // Substitua pelo nome do repositório
-  assetPrefix: '/gt-rnp-lfi.github.io', // Substitua pelo nome do repositório
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export', // Habilita a exportação estática
+  basePath: '/gt-rnp-lfi.github.io',
+  assetPrefix: '/gt-rnp-lfi.github.io',
 };
-
-export default nextConfig;
+module.exports = nextConfig;
