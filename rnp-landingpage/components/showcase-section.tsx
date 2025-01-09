@@ -1,0 +1,155 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { Trophy, Brain, Target, Zap, Shield, Lightbulb } from 'lucide-react'
+
+const features = [
+  {
+    icon: Trophy,
+    title: 'Gamificação Envolvente',
+    description: 'Participe de desafios, ganhe pontos e suba no ranking enquanto aprende.'
+  },
+  {
+    icon: Brain,
+    title: 'Aprendizado Adaptativo',
+    description: 'Conteúdo personalizado baseado no seu progresso e áreas de interesse.'
+  },
+  {
+    icon: Target,
+    title: 'Casos Reais',
+    description: 'Enfrente cenários baseados em incidentes reais reportados aos CSIRTs parceiros.'
+  }
+]
+
+const practicalFeatures = [
+  {
+    icon: Zap,
+    title: 'Simulações Realistas',
+    description: 'Enfrente cenários de incidentes de segurança baseados em casos reais.'
+  },
+  {
+    icon: Shield,
+    title: 'Análise de Ameaças',
+    description: 'Aprenda a identificar e classificar diferentes tipos de ameaças cibernéticas.'
+  },
+  {
+    icon: Target,
+    title: 'Estratégias de Resposta',
+    description: 'Desenvolva habilidades para criar estratégias eficazes de resposta a incidentes.'
+  },
+  {
+    icon: Lightbulb,
+    title: 'Feedback em Tempo Real',
+    description: 'Receba orientações instantâneas sobre suas decisões e ações.'
+  }
+]
+
+export default function ShowcaseSection() {
+  return (
+    <section className="py-20 bg-gradient-to-b from-purple-50 to-white">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+            Aprenda Cibersegurança de Forma Inovadora
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Nossa plataforma combina gamificação, IA e casos reais para oferecer uma experiência de aprendizado única e eficaz.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <Image
+              src="/placeholder.svg?height=400&width=600"
+              alt="Dashboard da plataforma"
+              width={600}
+              height={400}
+              className="rounded-lg shadow-xl"
+            />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="md:text-left text-center"
+          >
+            <h3 className="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600">Plataforma Intuitiva</h3>
+            <p className="text-gray-600 mb-6">
+              Nossa interface amigável torna o aprendizado de cibersegurança acessível e envolvente. 
+              Acompanhe seu progresso, participe de desafios e interaja com outros alunos em um ambiente 
+              gamificado projetado para maximizar seu aprendizado.
+            </p>
+            <ul className="space-y-4 text-left">
+              {features.map((feature, index) => (
+                <li key={index} className="flex items-start">
+                  <feature.icon className="w-6 h-6 text-purple-600 mr-2 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-semibold text-gray-800">{feature.title}</h4>
+                    <p className="text-gray-600">{feature.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="order-2 md:order-1 md:text-left text-center"
+          >
+            <h3 className="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600">Aprendizado Prático</h3>
+            <p className="text-gray-600 mb-6">
+              Enfrente desafios baseados em incidentes reais, aplicando seus conhecimentos em cenários 
+              práticos. Nossa plataforma utiliza IA para simular ameaças e guiar seu aprendizado, 
+              preparando você para situações reais de cibersegurança.
+            </p>
+            <ul className="space-y-4 text-left">
+              {practicalFeatures.map((feature, index) => (
+                <li key={index} className="flex items-start">
+                  <feature.icon className="w-6 h-6 text-purple-600 mr-2 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-semibold text-gray-800">{feature.title}</h4>
+                    <p className="text-gray-600">{feature.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="order-1 md:order-2"
+          >
+            <Image
+              src="/placeholder.svg?height=400&width=600"
+              alt="Simulação de incidente de segurança"
+              width={600}
+              height={400}
+              className="rounded-lg shadow-xl"
+            />
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
