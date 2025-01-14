@@ -1,9 +1,7 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
-import { motion, useAnimation, PanInfo } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Shield, Award, Target } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 
 const features = [
   { icon: Shield, title: 'Aprendizado Gamificado', description: 'Rankings e desafios práticos' },
@@ -12,92 +10,55 @@ const features = [
 ]
 
 export default function HeroSection() {
-  const [currentFeature, setCurrentFeature] = useState(0)
-  const constraintsRef = useRef(null)
-  const controls = useAnimation()
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768)
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    return () => window.removeEventListener('resize', checkMobile)
-  }, [])
-
-  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
-    const threshold = 50
-    if (info.offset.x > threshold && currentFeature > 0) {
-      setCurrentFeature(currentFeature - 1)
-    } else if (info.offset.x < -threshold && currentFeature < features.length - 1) {
-      setCurrentFeature(currentFeature + 1)
-    }
-    controls.start({ x: 0 })
-  }
-
-  const FeatureCircle = ({ feature, index }: { feature: typeof features[0], index: number }) => {
+  const FeatureCircle = ({ feature }: { feature: typeof features[0] }) => {
     const { icon: Icon, title, description } = feature
     return (
       <motion.div
-        className={`absolute ${
-          isMobile
-            ? index === currentFeature
-              ? 'left-1/2 -translate-x-1/2 bottom-20'
-              : index === currentFeature - 1
-              ? '-left-20 bottom-20'
-              : index === currentFeature + 1
-              ? 'left-full -translate-x-20 bottom-20'
-              : 'hidden'
-            : index === 0
-            ? 'left-1/3 -translate-x-1/2 bottom-8'
-            : index === 1
-            ? 'left-1/2 -translate-x-1/2 bottom-4'
-            : 'left-2/3 translate-x-1/2 bottom-8'
-        } transition-all duration-300`}
-        animate={isMobile ? { scale: index === currentFeature ? 1 : 0.8, opacity: index === currentFeature ? 1 : 0.6 } : {}}
+        className="flex flex-col items-center justify-center text-center bg-white/90 backdrop-blur-sm p-4 sm:p-6 rounded-full shadow-md border border-purple-100 w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48"
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5 }}
       >
-        <div className="bg-white/90 backdrop-blur-sm p-6 rounded-full shadow-md border border-purple-100 w-48 h-48 flex flex-col items-center justify-center text-center">
-          <Icon className="h-10 w-10 text-purple-600 mb-2" />
-          <h3 className="text-sm font-semibold mb-1">{title}</h3>
-          <p className="text-xs text-gray-600">{description}</p>
-        </div>
+        <Icon className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 text-purple-600 mb-2" />
+        <h3 className="text-xs sm:text-sm font-semibold mb-1">{title}</h3>
+        <p className="text-[10px] sm:text-xs text-gray-600">{description}</p>
       </motion.div>
     )
   }
 
   return (
-    <div className="relative h-[75vh] flex flex-col justify-between pt-16 pb-36 bg-gradient-to-b from-purple-50 to-white overflow-hidden">
-      {/* Floating Feature Circles */}
-      <motion.div 
-        className="absolute inset-x-0 bottom-0 h-96 pointer-events-none"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        <div ref={constraintsRef} className="relative w-full h-full">
-          {features.map((feature, index) => (
-            <FeatureCircle key={index} feature={feature} index={index} />
-          ))}
-        </div>
-      </motion.div>
+    <div className="relative min-h-screen w-full flex flex-col justify-between bg-gradient-to-b from-purple-50 to-white overflow-hidden">
+      {/* Background Decoration - Ajustado para melhor responsividade */}
+      <div className="absolute inset-0 w-full h-full -z-10 overflow-hidden">
+        <div 
+          className="absolute w-[500px] h-[500px] md:w-[800px] md:h-[800px] 
+          top-[-10%] left-[-10%] bg-purple-100 rounded-full opacity-20 blur-3xl"
+        />
+        <div 
+          className="absolute w-[500px] h-[500px] md:w-[800px] md:h-[800px] 
+          bottom-[-10%] right-[-10%] bg-blue-100 rounded-full opacity-20 blur-3xl"
+        />
+      </div>
 
-      {/* Main Content */}
-      <div className="container mx-auto px-4 relative z-10 flex-1 flex items-center">
+      {/* Conteúdo Principal */}
+      <div className="container mx-auto px-4 relative z-10 flex-1 flex flex-col items-center 
+        pt-20 sm:pt-24 md:pt-32"> {/* Ajustado padding-top para compensar navbar fixa */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto"
+          className="text-center w-full max-w-3xl mx-auto"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="inline-block px-4 py-2 bg-purple-100 rounded-full text-purple-600 font-medium text-sm mb-6"
+            className="inline-block px-3 py-1 sm:px-4 sm:py-2 bg-purple-100 rounded-full text-purple-600 font-medium text-xs sm:text-sm mb-4 sm:mb-6"
           >
             Programa Hackers do Bem
           </motion.div>
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600 leading-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600 leading-tight">
             Aprenda Cibersegurança de Forma Inovadora
           </h1>
           
@@ -105,49 +66,21 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-gray-600 text-xl md:text-2xl mb-10 max-w-2xl mx-auto"
+            className="text-gray-600 text-lg sm:text-xl md:text-2xl mb-6 sm:mb-10 max-w-2xl mx-auto px-4"
           >
             Uma plataforma gamificada que utiliza IA para transformar o aprendizado de resposta a incidentes de segurança em uma experiência envolvente e prática.
           </motion.p>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <Button 
-              className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg rounded-full"
-            >
-              Começar Agora
-            </Button>
-            <Button 
-              variant="outline" 
-              className="px-8 py-6 text-lg rounded-full border-2"
-            >
-              Saiba Mais
-            </Button>
-          </motion.div>
         </motion.div>
       </div>
 
-      {/* Mobile Carousel Drag Area */}
-      {isMobile && (
-        <motion.div
-          className="absolute bottom-0 left-0 right-0 h-80 cursor-grab active:cursor-grabbing"
-          drag="x"
-          dragConstraints={constraintsRef}
-          onDragEnd={handleDragEnd}
-          animate={controls}
-        />
-      )}
-
-      {/* Background Decoration */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-100 rounded-full opacity-30 blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-100 rounded-full opacity-30 blur-3xl animate-pulse" />
+      {/* Feature Circles - Ajustado para melhor responsividade */}
+      <div className="w-full px-4 pb-12 sm:pb-16 md:pb-20">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-8 md:gap-12 max-w-6xl mx-auto">
+          {features.map((feature, index) => (
+            <FeatureCircle key={index} feature={feature} />
+          ))}
+        </div>
       </div>
     </div>
   )
 }
-
