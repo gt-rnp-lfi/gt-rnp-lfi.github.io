@@ -3,13 +3,12 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Shield, Menu, X } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b">
+    <nav className="fixed top-0 left-0 right-0 w-full bg-white/80 backdrop-blur-md z-50 border-b">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Brand */}
@@ -32,16 +31,6 @@ export default function NavBar() {
             <Link href="#team" className="text-gray-600 hover:text-purple-600 transition-colors">
               Equipe
             </Link>
-          </div>
-
-          {/* Auth Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" className="text-gray-600 hover:text-purple-600">
-              Login
-            </Button>
-            <Button className="bg-purple-600 text-white hover:bg-purple-700">
-              Cadastrar
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -90,14 +79,6 @@ export default function NavBar() {
               >
                 Equipe
               </Link>
-              <div className="flex flex-col space-y-2">
-                <Button variant="ghost" className="text-gray-600 hover:text-purple-600 w-full">
-                  Login
-                </Button>
-                <Button className="bg-purple-600 text-white hover:bg-purple-700 w-full">
-                  Cadastrar
-                </Button>
-              </div>
             </div>
           </div>
         )}
