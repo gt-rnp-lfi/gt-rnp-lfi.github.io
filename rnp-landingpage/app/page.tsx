@@ -3,6 +3,7 @@ import HeroSection from '../components/hero-section'
 import ContextSection from '../components/context-section'
 import ShowcaseSection from '../components/showcase-section'
 import NewsSection from '../components/news-section'
+import TechSection from '../components/tech-section'
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <ContextSection />
       <ShowcaseSection />
       <NewsSection />
+      <TechSection />
     </>
   )
 }
