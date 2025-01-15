@@ -5,6 +5,7 @@ import ShowcaseSection from '../components/showcase-section'
 import NewsSection from '../components/news-section'
 import TechSection from '../components/tech-section'
 import TeamSection from '../components/team-section'
+import Footer from '../components/footer'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <NewsSection />
       <TechSection />
       <TeamSection />
+      <Footer />
     </>
   )
 }
