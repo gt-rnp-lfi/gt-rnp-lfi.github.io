@@ -25,6 +25,9 @@ export default function NavBar() {
             <Link href="#about" className="text-gray-600 hover:text-purple-600 transition-colors">
               Sobre
             </Link>
+            <Link href="#news" className="text-gray-600 hover:text-purple-600 transition-colors">
+              Novidades
+            </Link>
             <Link href="#tech" className="text-gray-600 hover:text-purple-600 transition-colors">
               Tecnologias
             </Link>
@@ -64,6 +67,13 @@ export default function NavBar() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Sobre
+              </Link>
+              <Link
+                href="#news"
+                className="text-gray-600 hover:text-purple-600 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Novidades
               </Link>
               <Link
                 href="#tech"
