@@ -58,18 +58,12 @@ export default function Footer() {
             <div>
               <h3 className="font-semibold text-gray-800 mb-4">Contato</h3>
               <ul className="space-y-2">
-                <li className="text-gray-600">
-                  Universidade Federal do Pampa
-                </li>
-                <li className="text-gray-600">
-                  Campus Alegrete
-                </li>
-                <li>
+                <li> {/* só adicionar mais elementos na lista se precisar de mais contatos */}
                   <a 
                     href="mailto:contato@cyberlearn.com.br" 
                     className="text-purple-600 hover:text-purple-700 transition-colors"
                   >
-                    contato@cyberlearn.com.br
+                    contato@gt-lfi.com.br
                   </a>
                 </li>
               </ul>
@@ -80,7 +74,7 @@ export default function Footer() {
           <div className="border-t border-purple-100 pt-6 mt-6">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-gray-600 text-sm mb-4 md:mb-0">
-                © 2024 CyberLearn. Todos os direitos reservados.
+                © 2024 GT-LFI - Learning from Incidents. Todos os direitos reservados.
               </p>
               <div className="flex space-x-6">
                 <Link 
