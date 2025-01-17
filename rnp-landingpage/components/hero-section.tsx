@@ -7,7 +7,7 @@ import Autoplay from 'embla-carousel-autoplay'
 import { useCallback, useEffect, useState } from 'react'
 
 const features = [
-  { icon: Shield, title: 'Aprendizado Gamificado', description: 'Rankings e desafios práticos' },
+  { icon: Shield, title: 'Aprendizado Gamificado', description: 'Rankings, desafios e pontuações' },
   { icon: Target, title: 'IA Avançada', description: 'Análise inteligente de incidentes' },
   { icon: Award, title: 'Casos Reais', description: 'Aprenda com CSIRTs parceiros' },
 ]
@@ -61,7 +61,7 @@ export default function HeroSection() {
 
     if (isStatic) {
       return (
-        <div className="flex flex-col items-center justify-center text-center bg-white/90 backdrop-blur-sm p-8 rounded-full shadow-md border border-purple-100 aspect-square">
+        <div className="flex flex-col items-center justify-center text-center bg-white/90 backdrop-blur-sm p-4 rounded-full shadow-md border border-purple-100 aspect-square">
           {content}
         </div>
       )

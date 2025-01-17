@@ -47,36 +47,37 @@ const practicalFeatures = [
 
 export default function ShowcaseSection() {
   return (
-    <section className="py-20 bg-gradient-to-b from-purple-50 to-white">
-      <div className="container mx-auto px-4">
+    <section className="py-12 md:py-20 bg-gradient-to-b from-purple-50 to-white">
+      <div className="container mx-auto px-4 overflow-x-hidden">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+          <h2 className="text-2xl md:text-4xl font-bold mb-4 text-gray-800">
             Aprenda Cibersegurança de Forma Inovadora
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             Nossa plataforma combina gamificação, IA e casos reais para oferecer uma experiência de aprendizado única e eficaz.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-12 md:mb-20">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
+            className="w-full"
           >
             <Image
               src="/placeholder.svg?height=400&width=600"
               alt="Dashboard da plataforma"
               width={600}
               height={400}
-              className="rounded-lg shadow-xl"
+              className="rounded-lg shadow-xl w-full h-auto"
             />
           </motion.div>
           <motion.div
@@ -84,21 +85,21 @@ export default function ShowcaseSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="md:text-left text-center"
+            className="w-full"
           >
-            <h3 className="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600">Plataforma Intuitiva</h3>
-            <p className="text-gray-600 mb-6">
+            <h3 className="text-xl md:text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600">Plataforma Intuitiva</h3>
+            <p className="text-sm md:text-base text-gray-600 mb-6">
               Nossa interface amigável torna o aprendizado de cibersegurança acessível e envolvente. 
               Acompanhe seu progresso, participe de desafios e interaja com outros alunos em um ambiente 
               gamificado projetado para maximizar seu aprendizado.
             </p>
-            <ul className="space-y-4 text-left">
+            <ul className="space-y-4">
               {features.map((feature, index) => (
                 <li key={index} className="flex items-start">
-                  <feature.icon className="w-6 h-6 text-purple-600 mr-2 flex-shrink-0" />
+                  <feature.icon className="w-5 h-5 md:w-6 md:h-6 text-purple-600 mr-2 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold text-gray-800">{feature.title}</h4>
-                    <p className="text-gray-600">{feature.description}</p>
+                    <h4 className="font-semibold text-gray-800 text-sm md:text-base">{feature.title}</h4>
+                    <p className="text-gray-600 text-sm md:text-base">{feature.description}</p>
                   </div>
                 </li>
               ))}
@@ -106,27 +107,27 @@ export default function ShowcaseSection() {
           </motion.div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="order-2 md:order-1 md:text-left text-center"
+            className="order-2 md:order-1 w-full"
           >
-            <h3 className="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600">Aprendizado Prático</h3>
-            <p className="text-gray-600 mb-6">
+            <h3 className="text-xl md:text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600">Aprendizado Prático</h3>
+            <p className="text-sm md:text-base text-gray-600 mb-6">
               Enfrente desafios baseados em incidentes reais, aplicando seus conhecimentos em cenários 
               práticos. Nossa plataforma utiliza IA para simular ameaças e guiar seu aprendizado, 
               preparando você para situações reais de cibersegurança.
             </p>
-            <ul className="space-y-4 text-left">
+            <ul className="space-y-4">
               {practicalFeatures.map((feature, index) => (
                 <li key={index} className="flex items-start">
-                  <feature.icon className="w-6 h-6 text-purple-600 mr-2 flex-shrink-0" />
+                  <feature.icon className="w-5 h-5 md:w-6 md:h-6 text-purple-600 mr-2 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold text-gray-800">{feature.title}</h4>
-                    <p className="text-gray-600">{feature.description}</p>
+                    <h4 className="font-semibold text-gray-800 text-sm md:text-base">{feature.title}</h4>
+                    <p className="text-gray-600 text-sm md:text-base">{feature.description}</p>
                   </div>
                 </li>
               ))}
@@ -137,14 +138,14 @@ export default function ShowcaseSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="order-1 md:order-2"
+            className="order-1 md:order-2 w-full"
           >
             <Image
               src="/placeholder.svg?height=400&width=600"
               alt="Simulação de incidente de segurança"
               width={600}
               height={400}
-              className="rounded-lg shadow-xl"
+              className="rounded-lg shadow-xl w-full h-auto"
             />
           </motion.div>
         </div>
