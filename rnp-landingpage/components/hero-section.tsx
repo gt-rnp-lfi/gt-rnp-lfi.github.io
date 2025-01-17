@@ -2,6 +2,9 @@
 
 import { motion } from 'framer-motion'
 import { Shield, Award, Target } from 'lucide-react'
+import useEmblaCarousel from 'embla-carousel-react'
+import Autoplay from 'embla-carousel-autoplay'
+import { useCallback, useEffect, useState } from 'react'
 
 const features = [
   { icon: Shield, title: 'Aprendizado Gamificado', description: 'Rankings e desafios práticos' },
@@ -10,24 +13,74 @@ const features = [
 ]
 
 export default function HeroSection() {
-  const FeatureCircle = ({ feature }: { feature: typeof features[0] }) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { 
+      loop: true,
+      align: 'center',
+      skipSnaps: false,
+    },
+    [Autoplay({ delay: 5000, stopOnInteraction: false })]
+  )
+
+  const [selectedIndex, setSelectedIndex] = useState(0)
+
+  useEffect(() => {
+    if (!emblaApi) return
+
+    emblaApi.on('select', () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap())
+    })
+  }, [emblaApi])
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev()
+  }, [emblaApi])
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext()
+  }, [emblaApi])
+
+  const FeatureCircle = ({ 
+    feature, 
+    isCenter, 
+    isStatic = false 
+  }: { 
+    feature: typeof features[0], 
+    isCenter: boolean,
+    isStatic?: boolean 
+  }) => {
     const { icon: Icon, title, description } = feature
+    
+    const content = (
+      <div className="flex flex-col items-center max-h-full">
+        <Icon className={`${isCenter ? 'h-12 w-12' : 'h-6 w-6'} text-purple-600 mb-2 flex-shrink-0`} />
+        <h3 className={`${isCenter ? 'text-base' : 'text-xs'} font-semibold mb-1 line-clamp-2`}>{title}</h3>
+        <p className={`${isCenter ? 'text-sm' : 'text-[10px]'} text-gray-600 line-clamp-2`}>{description}</p>
+      </div>
+    )
+
+    if (isStatic) {
+      return (
+        <div className="flex flex-col items-center justify-center text-center bg-white/90 backdrop-blur-sm p-8 rounded-full shadow-md border border-purple-100 aspect-square">
+          {content}
+        </div>
+      )
+    }
+
     return (
       <motion.div
-        className="flex flex-col items-center justify-center text-center bg-white/90 backdrop-blur-sm p-4 sm:p-6 rounded-full shadow-md border border-purple-100 w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48"
+        className="flex flex-col items-center justify-center text-center bg-white/90 backdrop-blur-sm p-4 rounded-full shadow-md border border-purple-100 aspect-square"
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <Icon className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 text-purple-600 mb-2" />
-        <h3 className="text-xs sm:text-sm font-semibold mb-1">{title}</h3>
-        <p className="text-[10px] sm:text-xs text-gray-600">{description}</p>
+        {content}
       </motion.div>
     )
   }
 
   return (
-    <div className="relative min-h-screen w-full flex flex-col justify-between bg-gradient-to-b from-purple-50 to-white overflow-hidden">
+    <div className="relative min-h-[600px] sm:min-h-[800px] w-full flex flex-col bg-gradient-to-b from-purple-50 to-white overflow-hidden">
       {/* Background Decoration - Ajustado para melhor responsividade */}
       <div className="absolute inset-0 w-full h-full -z-10 overflow-hidden">
         <div 
@@ -41,7 +94,7 @@ export default function HeroSection() {
       </div>
 
       {/* Conteúdo Principal */}
-      <div className="container mx-auto px-4 relative z-10 flex-1 flex flex-col items-center 
+      <div className="container mx-auto px-4 relative z-10 flex flex-col items-center 
         pt-20 sm:pt-24 md:pt-32"> {/* Ajustado padding-top para compensar navbar fixa */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -73,11 +126,59 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Feature Circles - Ajustado para melhor responsividade */}
-      <div className="w-full px-4 pb-12 sm:pb-16 md:pb-20">
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-8 md:gap-12 max-w-6xl mx-auto">
+      {/* Feature Circles - Layout reajustado */}
+      <div className="w-full px-4">
+        {/* Versão Mobile com Carrossel */}
+        <div className="sm:hidden">
+          <div className="overflow-visible relative w-full" ref={emblaRef}>
+            <div className="flex">
+              {features.map((feature, index) => (
+                <div 
+                  key={`mobile-${index}`}
+                  className="flex-[0_0_100%] relative flex justify-center"
+                  style={{
+                    transform: selectedIndex === index 
+                      ? 'translateX(0)' 
+                      : selectedIndex === (index + 1) % features.length
+                      ? 'translateX(70%)'
+                      : 'translateX(-70%)',
+                    zIndex: selectedIndex === index ? 20 : 10
+                  }}
+                >
+                  <div 
+                    className={`transition-all duration-500 ease-in-out transform
+                      ${selectedIndex === index 
+                        ? 'w-56' 
+                        : 'w-32 opacity-50'}`}
+                  >
+                    <FeatureCircle 
+                      feature={feature} 
+                      isCenter={selectedIndex === index}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Versão Desktop Estática */}
+        <div className="hidden sm:flex justify-center items-center gap-8 md:gap-12 max-w-6x1 mx-auto">
           {features.map((feature, index) => (
-            <FeatureCircle key={index} feature={feature} />
+            <motion.div 
+              key={`desktop-${index}`}
+              className="w-56"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <FeatureCircle 
+                feature={feature} 
+                isCenter={true}
+                isStatic={true}
+              />
+            </motion.div>
           ))}
         </div>
       </div>

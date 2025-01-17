@@ -28,11 +28,11 @@ const contextItems = [
 
 export default function ContextSection() {
   return (
-    <section className="relative w-full min-h-screen bg-gradient-to-b from-white to-purple-50 overflow-hidden">
+    <section className="relative w-full bg-gradient-to-b from-white to-purple-50 overflow-hidden">
       <div className="absolute inset-0 w-full h-full -z-10">
         {/* Elementos decorativos similares se necessário */}
       </div>
-      <div className="container mx-auto px-4 py-20 relative z-10">
+      <div className="container mx-auto px-4 py-16 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
