@@ -5,25 +5,39 @@ import Image from 'next/image'
 
 const teamMembers = [
   {
-    name: 'Rodrigo Miani',
+    name: 'Rodrigo Sanches Miani',
     role: 'Coordenador',
     description: 'Professor do Departamento de Computação com experiência em Segurança da Informação.',
     tags: ['Coordenador'],
     imageUrl: '/placeholder-avatar.png' // Substituir pelas imagens reais
   },
   {
-    name: 'Silvio Quincozes',
+    name: 'Silvio Ereno Quincozes',
     role: 'Pesquisador',
     description: 'Doutorando em Ciência da Computação com foco em Cibersegurança.',
     tags: ['Bolsista'],
     imageUrl: '/placeholder-avatar.png'
   },
   {
-    name: 'Felipe H. Scherer',
+    name: 'Diego Luis Kreutz',
+    role: 'Pesquisador',
+    description: 'Doutor em Placeholder Text.',
+    tags: ['Bolsista'],
+    imageUrl: '/placeholder-avatar.png'
+  },
+  {
+    name: 'Felipe Homrich Scherer',
     role: 'Pesquisador',
     description: 'Estudante de Engenharia de Software pela Universidade Federal do Pampa.',
     tags: ['Bolsista'],
     imageUrl: '/avatar-felipe-scherer.png'
+  },
+  {
+    name: 'Felipe Nestor Dresch',
+    role: 'Pesquisador',
+    description: 'Graduando de Engenharia de Software (Universidade Federal do Pampa) e Técnico em Informática (IFRS).',
+    tags: ['Bolsista'],
+    imageUrl: '/avatar-felipe-dresch.png'
   },
 ]
 
