@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Shield, Award, Target } from 'lucide-react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const features = [
   { icon: Shield, title: 'Aprendizado Gamificado', description: 'Rankings, desafios e pontuações' },
@@ -30,14 +30,6 @@ export default function HeroSection() {
     emblaApi.on('select', () => {
       setSelectedIndex(emblaApi.selectedScrollSnap())
     })
-  }, [emblaApi])
-
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev()
-  }, [emblaApi])
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext()
   }, [emblaApi])
 
   const FeatureCircle = ({ 
