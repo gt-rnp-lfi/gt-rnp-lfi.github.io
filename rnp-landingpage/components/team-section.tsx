@@ -5,39 +5,67 @@ import Image from 'next/image'
 
 const teamMembers = [
   {
-    name: 'Rodrigo Sanches Miani',
+    name: 'Dr. Rodrigo Sanches Miani',
     role: 'Coordenador',
     description: 'Professor do Departamento de Computação com experiência em Segurança da Informação.',
     tags: ['Coordenador'],
-    imageUrl: '/placeholder-avatar.png' // Substituir pelas imagens reais
+    imageUrl: 'avatares/placeholder-avatar.png'
   },
   {
-    name: 'Silvio Ereno Quincozes',
+    name: 'Dr. Silvio Ereno Quincozes',
     role: 'Pesquisador',
-    description: 'Doutorando em Ciência da Computação com foco em Cibersegurança.',
-    tags: ['Bolsista'],
-    imageUrl: '/placeholder-avatar.png'
+    description: 'Doutor em Ciência da Computação com foco em Cibersegurança. Professor na Universidade Federal do Pampa (UNIPAMPA).',
+    tags: ['Professor'],
+    imageUrl: 'avatares/avatar-ereno.jpg'
   },
   {
-    name: 'Diego Luis Kreutz',
+    name: 'Dr. Diego Luis Kreutz',
     role: 'Pesquisador',
-    description: 'Doutor em Placeholder Text.',
-    tags: ['Bolsista'],
-    imageUrl: '/placeholder-avatar.png'
+    description: 'Pesquisador em Cibersegurança e professor na Universidade Federal do Pampa (UNIPAMPA).',
+    tags: ['Professor'],
+    imageUrl: 'avatares/avatar-kreutz.webp'
+  },
+  {
+    name: 'Dr. Leandro Bertholdo',
+    role: 'Pesquisador',
+    description: 'Doutor em redes com foco em segurança. Professor na Universidade Federal do Rio Grande do Sul (UFRGS).',
+    tags: ['Professor'],
+    imageUrl: 'avatares/avatar-bertholdo.png'
   },
   {
     name: 'Felipe Homrich Scherer',
     role: 'Pesquisador',
     description: 'Estudante de Engenharia de Software pela Universidade Federal do Pampa.',
     tags: ['Bolsista'],
-    imageUrl: '/avatar-felipe-scherer.png'
+    imageUrl: 'avatares/avatar-felipe-scherer.png'
   },
   {
     name: 'Felipe Nestor Dresch',
     role: 'Pesquisador',
-    description: 'Graduando de Engenharia de Software (Universidade Federal do Pampa) e Técnico em Informática (IFRS).',
+    description: 'Graduando em Engenharia de Software pela Universidade Federal do Pampa e Técnico em Informática pelo IFRS.',
     tags: ['Bolsista'],
-    imageUrl: '/avatar-felipe-dresch.png'
+    imageUrl: 'avatares/avatar-dresch.png'
+  },
+  {
+    name: 'Sebastião Alves de Jesus Filho',
+    role: 'Pesquisador',
+    description: 'Doutorando em Ciência da Computação e Técnico de Laboratório de Informática na Universidade Federal de Uberlândia (UFU).',
+    tags: ['Bolsista'],
+    imageUrl: 'avatares/avatar-filho.jpg'
+  },
+  {
+    name: 'João Pedro Ramires Esteves',
+    role: 'Pesquisador',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+    tags: ['bolsista'],
+    imageUrl: 'avatares/avatar-esteves.png'
+  },
+  {
+    name: 'Carolina Bandel',
+    role: 'Pesquisador',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+    tags: ['bolsista'],
+    imageUrl: 'avatares/avatar-bandel.png'
   },
 ]
 
