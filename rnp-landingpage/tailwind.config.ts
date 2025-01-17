@@ -49,6 +49,19 @@ export default {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
+  			},
+  			brand: {
+  				primary: 'hsl(var(--brand-primary))',
+  				'primary-light': 'hsl(var(--brand-primary-light))',
+  				secondary: 'hsl(var(--brand-secondary))',
+  				surface: {
+  					1: 'hsl(var(--brand-surface-1))',
+  					2: 'hsl(var(--brand-surface-2))',
+  				}
+  			},
+  			text: {
+  				primary: 'hsl(var(--text-primary))',
+  				secondary: 'hsl(var(--text-secondary))',
   			}
   		},
   		borderRadius: {
