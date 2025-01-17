@@ -45,15 +45,15 @@ export default function HeroSection() {
     
     const content = (
       <div className="flex flex-col items-center max-h-full">
-        <Icon className={`${isCenter ? 'h-12 w-12' : 'h-6 w-6'} text-purple-600 mb-2 flex-shrink-0`} />
+        <Icon className={`${isCenter ? 'h-12 w-12' : 'h-6 w-6'} text-brand-primary mb-2 flex-shrink-0`} />
         <h3 className={`${isCenter ? 'text-base' : 'text-xs'} font-semibold mb-1 line-clamp-2`}>{title}</h3>
-        <p className={`${isCenter ? 'text-sm' : 'text-[10px]'} text-gray-600 line-clamp-2`}>{description}</p>
+        <p className={`${isCenter ? 'text-sm' : 'text-[10px]'} text-text-secondary line-clamp-2`}>{description}</p>
       </div>
     )
 
     if (isStatic) {
       return (
-        <div className="flex flex-col items-center justify-center text-center bg-white/90 backdrop-blur-sm p-4 rounded-full shadow-md border border-purple-100 aspect-square">
+        <div className="flex flex-col items-center justify-center text-center bg-white/90 backdrop-blur-sm p-4 rounded-full shadow-md border border-brand-surface-1 aspect-square">
           {content}
         </div>
       )
@@ -61,7 +61,7 @@ export default function HeroSection() {
 
     return (
       <motion.div
-        className="flex flex-col items-center justify-center text-center bg-white/90 backdrop-blur-sm p-4 rounded-full shadow-md border border-purple-100 aspect-square"
+        className="flex flex-col items-center justify-center text-center bg-white/90 backdrop-blur-sm p-4 rounded-full shadow-md border border-brand-surface-1 aspect-square"
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -72,22 +72,22 @@ export default function HeroSection() {
   }
 
   return (
-    <div className="relative min-h-[600px] sm:min-h-[800px] w-full flex flex-col bg-gradient-to-b from-purple-50 to-white overflow-hidden">
-      {/* Background Decoration - Ajustado para melhor responsividade */}
+    <div className="relative min-h-[600px] sm:min-h-[800px] w-full flex flex-col bg-gradient-page overflow-hidden">
+      {/* Background Decoration */}
       <div className="absolute inset-0 w-full h-full -z-10 overflow-hidden">
         <div 
           className="absolute w-[500px] h-[500px] md:w-[800px] md:h-[800px] 
-          top-[-10%] left-[-10%] bg-purple-100 rounded-full opacity-20 blur-3xl"
+          top-[-10%] left-[-10%] bg-brand-surface-1 rounded-full opacity-20 blur-3xl"
         />
         <div 
           className="absolute w-[500px] h-[500px] md:w-[800px] md:h-[800px] 
-          bottom-[-10%] right-[-10%] bg-blue-100 rounded-full opacity-20 blur-3xl"
+          bottom-[-10%] right-[-10%] bg-brand-surface-2 rounded-full opacity-20 blur-3xl"
         />
       </div>
 
       {/* Conteúdo Principal */}
       <div className="container mx-auto px-4 relative z-10 flex flex-col items-center 
-        pt-20 sm:pt-24 md:pt-32"> {/* Ajustado padding-top para compensar navbar fixa */}
+        pt-20 sm:pt-24 md:pt-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -98,12 +98,12 @@ export default function HeroSection() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="inline-block px-3 py-1 sm:px-4 sm:py-2 bg-purple-100 rounded-full text-purple-600 font-medium text-xs sm:text-sm mb-4 sm:mb-6"
+            className="inline-block px-3 py-1 sm:px-4 sm:py-2 bg-brand-surface-1 rounded-full text-brand-primary font-medium text-xs sm:text-sm mb-4 sm:mb-6"
           >
             Programa Hackers do Bem
           </motion.div>
           
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600 leading-tight">
+          <h1 className="text-gradient-brand text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-8 leading-tight">
             Aprenda Cibersegurança de Forma Inovadora
           </h1>
           
@@ -111,14 +111,14 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-gray-600 text-lg sm:text-xl md:text-2xl mb-6 sm:mb-10 max-w-2xl mx-auto px-4"
+            className="text-text-secondary text-lg sm:text-xl md:text-2xl mb-6 sm:mb-10 max-w-2xl mx-auto px-4"
           >
             Uma plataforma gamificada que utiliza IA para transformar o aprendizado de resposta a incidentes de segurança em uma experiência envolvente e prática.
           </motion.p>
         </motion.div>
       </div>
 
-      {/* Feature Circles - Layout reajustado */}
+      {/* Feature Circles */}
       <div className="w-full px-4">
         {/* Versão Mobile com Carrossel */}
         <div className="sm:hidden">
