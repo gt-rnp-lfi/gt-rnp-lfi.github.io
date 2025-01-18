@@ -78,7 +78,7 @@ const teamMembers = [
 
 export default function TeamSection() {
   return (
-    <section id="team" className="relative w-full bg-gradient-to-b from-purple-50 to-white overflow-hidden py-20">
+    <section id="team" className="relative w-full py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

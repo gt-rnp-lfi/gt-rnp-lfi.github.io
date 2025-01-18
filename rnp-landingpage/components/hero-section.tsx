@@ -72,7 +72,7 @@ export default function HeroSection() {
   }
 
   return (
-    <div className="relative min-h-[600px] sm:min-h-[800px] w-full flex flex-col bg-gradient-page overflow-hidden">
+    <div className="relative min-h-[600px] sm:min-h-[800px] w-full flex flex-col">
       {/* Background Decoration */}
       <div className="absolute inset-0 w-full h-full -z-10 overflow-hidden">
         <div 

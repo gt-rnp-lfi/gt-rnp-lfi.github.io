@@ -47,7 +47,7 @@ const practicalFeatures = [
 
 export default function ShowcaseSection() {
   return (
-    <section className="py-12 md:py-20 bg-gradient-to-b from-purple-50 to-white">
+    <section className="py-12 md:py-20">
       <div className="container mx-auto px-4 overflow-x-hidden">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

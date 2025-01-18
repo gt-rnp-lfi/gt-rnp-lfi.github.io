@@ -6,19 +6,20 @@ import NewsSection from '../components/news-section'
 import TechSection from '../components/tech-section'
 import TeamSection from '../components/team-section'
 import Footer from '../components/footer'
+import IncidentSection from '../components/incident-section'
 
-export default function Home() {
+export default function Home() { //<ContextSection />
   return (
-    <>
+    <main className="bg-gradient-page">
       <NavBar />
       <HeroSection />
-      <ContextSection />
+      <IncidentSection />
       <ShowcaseSection />
       <NewsSection />
       <TechSection />
       <TeamSection />
       <Footer />
-    </>
+    </main>
   )
 }
 

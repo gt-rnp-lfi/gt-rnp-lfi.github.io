@@ -28,7 +28,7 @@ const technologies = [
 
 export default function TechSection() {
   return (
-    <section id="tech" className="relative w-full bg-gradient-to-b from-white to-purple-50 overflow-hidden py-20">
+    <section id="tech" className="relative w-full py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
