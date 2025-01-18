@@ -54,6 +54,13 @@ const teamMembers = [
     imageUrl: 'avatares/avatar-filho.jpg'
   },
   {
+    name: 'Álvaro Santana',
+    role: 'Pesquisador',
+    description: 'Mestrando em Ciência da Computação pela UFU e Consultor de Soluções na empresa Accenture.',
+    tags: ['bolsista'],
+    imageUrl: 'avatares/avatar-santana.jpg'
+  },
+  {
     name: 'João Pedro Ramires Esteves',
     role: 'Pesquisador',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
