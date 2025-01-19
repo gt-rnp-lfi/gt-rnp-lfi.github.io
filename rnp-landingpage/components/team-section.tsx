@@ -7,9 +7,9 @@ const teamMembers = [
   {
     name: 'Dr. Rodrigo Sanches Miani',
     role: 'Coordenador',
-    description: 'Professor do Departamento de Computação com experiência em Segurança da Informação.',
+    description: 'Doutor em Engenharia Elétrica e pesquisador em Cibersegurança. Professor na Universidade Federal de Uberlândia (UFU).',
     tags: ['Coordenador'],
-    imageUrl: 'avatares/placeholder-avatar.png'
+    imageUrl: 'avatares/avatar-miani.jpg'
   },
   {
     name: 'Dr. Silvio Ereno Quincozes',
@@ -54,11 +54,18 @@ const teamMembers = [
     imageUrl: 'avatares/avatar-filho.jpg'
   },
   {
-    name: 'Álvaro Santana',
+    name: 'Alvaro Santana',
     role: 'Pesquisador',
     description: 'Mestrando em Ciência da Computação pela UFU e Consultor de Soluções na empresa Accenture.',
     tags: ['bolsista'],
     imageUrl: 'avatares/avatar-santana.jpg'
+  },
+  {
+    name: 'Carolina Bandel',
+    role: 'Pesquisador',
+    description: 'Graduanda em Gestão de Tecnologia da Informação pelo Senac SP.',
+    tags: ['bolsista'],
+    imageUrl: 'avatares/avatar-bandel.jpeg'
   },
   {
     name: 'João Pedro Ramires Esteves',
@@ -67,19 +74,12 @@ const teamMembers = [
     tags: ['bolsista'],
     imageUrl: 'avatares/avatar-esteves.png'
   },
-  {
-    name: 'Carolina Bandel',
-    role: 'Pesquisador',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
-    tags: ['bolsista'],
-    imageUrl: 'avatares/avatar-bandel.png'
-  },
 ]
 
 export default function TeamSection() {
   return (
     <section id="team" className="relative w-full py-20">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 max-w-8xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -95,7 +95,7 @@ export default function TeamSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
@@ -103,37 +103,44 @@ export default function TeamSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300"
+              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <div className="flex flex-col items-center text-center">
-                <div className="relative w-24 h-24 mb-4">
-                  <Image
-                    src={member.imageUrl}
-                    alt={member.name}
-                    fill
-                    className="rounded-full object-cover border-2 border-purple-100"
-                  />
+              <div className="md:p-4 p-3">
+                <div className="flex md:flex-col items-center md:text-center">
+                  <div className="relative w-12 h-12 md:w-20 md:h-20 md:mb-3 flex-shrink-0">
+                    <Image
+                      src={member.imageUrl}
+                      alt={member.name}
+                      fill
+                      className="rounded-full object-cover border-2 border-purple-100"
+                    />
+                  </div>
+                  <div className="ml-4 md:ml-0 flex-grow">
+                    <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-1">
+                      {member.name}
+                    </h3>
+                    <div className="flex gap-2 mb-3 flex-wrap md:justify-center">
+                      {member.tags.map((tag, tagIndex) => (
+                        <span
+                          key={tagIndex}
+                          className={`px-2 py-1 rounded-full text-xs font-medium ${
+                            tag === 'Coordenador'
+                              ? 'bg-purple-100 text-purple-700'
+                              : tag === 'Professor'
+                              ? 'bg-blue-100 text-blue-700'
+                              : 'bg-green-100 text-green-700'
+                          }`}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <p className="text-gray-600 text-sm md:block hidden">
+                      {member.description}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-1">
-                  {member.name}
-                </h3>
-                <div className="flex gap-2 mb-3">
-                  {member.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className={`px-2 py-1 rounded-full text-xs font-medium ${
-                        tag === 'Coordenador'
-                          ? 'bg-purple-100 text-purple-700'
-                          : tag === 'Professor'
-                          ? 'bg-blue-100 text-blue-700'
-                          : 'bg-green-100 text-green-700'
-                      }`}
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 text-sm md:hidden mt-2 border-t pt-2">
                   {member.description}
                 </p>
               </div>
