@@ -28,71 +28,74 @@ const incidentTypes = [
 
 export default function IncidentSection() {
   return (
-    <section className="relative w-full py-20">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
-          {/* Lado Esquerdo - Texto */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="w-full lg:w-1/2 text-center"
-          >
-            <div className="flex flex-col items-center gap-4 mb-6">
-              <Shield className="w-12 h-12 text-brand-primary" />
-              <h2 className="text-4xl font-bold text-text-primary">
-                O que é um Incidente?
-              </h2>
-            </div>
-            <p className="text-xl text-text-secondary leading-relaxed mb-8">
-              Um incidente de segurança ocorre quando há uma ameaça ou violação que compromete
-              a confidencialidade, integridade ou disponibilidade de dados. Isso pode incluir
-              ataques cibernéticos, exploração de vulnerabilidades, malware e muito mais.
-            </p>
-          </motion.div>
-
-          {/* Lado Direito - Timeline */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="w-full lg:w-1/2"
-          >
-            <div className="relative">
-              {/* Linha vertical da timeline */}
-              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-brand-surface-1" />
-              
-              {/* Types */}
-              <div className="space-y-8">
-                {incidentTypes.map((type, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="relative flex items-start gap-6"
-                  >
-                    {/* Ícone */}
-                    <div className="relative z-10 flex items-center justify-center w-16 h-16 bg-white rounded-full shadow-lg border-2 border-brand-surface-1">
-                      <type.icon className="w-8 h-8 text-brand-primary" />
-                    </div>
-                    {/* Conteúdo */}
-                    <div className="flex-1 pt-3">
-                      <h3 className="text-xl font-semibold mb-2 text-text-primary">
-                        {type.title}
-                      </h3>
-                      <p className="text-text-secondary">
-                        {type.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
+    <section className="relative w-full py-[5rem]">
+      {/* Wrapper externo para controlar largura e centralização */}
+      <div className="w-full max-w-[1400px] 2xl:max-w-[85%] mx-auto">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row gap-[3rem] items-center">
+            {/* Lado Esquerdo - Texto */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="w-full lg:w-1/2 text-center"
+            >
+              <div className="flex flex-col items-center gap-[1rem] mb-[1.5rem]">
+                <Shield className="w-[3rem] h-[3rem] text-brand-primary" />
+                <h2 className="text-[2rem] sm:text-[2.5rem] 2xl:text-[3rem] font-bold text-text-primary">
+                  O que é um Incidente?
+                </h2>
               </div>
-            </div>
-          </motion.div>
+              <p className="text-[1.125rem] sm:text-[1.25rem] 2xl:text-[1.375rem] text-text-secondary leading-relaxed mb-[2rem]">
+                Um incidente de segurança ocorre quando há uma ameaça ou violação que compromete
+                a confidencialidade, integridade ou disponibilidade de dados. Isso pode incluir
+                ataques cibernéticos, exploração de vulnerabilidades, malware e muito mais.
+              </p>
+            </motion.div>
+
+            {/* Lado Direito - Timeline */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="w-full lg:w-1/2"
+            >
+              <div className="relative">
+                {/* Linha vertical da timeline */}
+                <div className="absolute left-8 top-0 bottom-0 w-[0.125rem] bg-brand-surface-1" />
+                
+                {/* Types */}
+                <div className="space-y-[2rem]">
+                  {incidentTypes.map((type, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="relative flex items-start gap-[1.5rem]"
+                    >
+                      {/* Ícone */}
+                      <div className="relative z-10 flex items-center justify-center w-[4rem] h-[4rem] bg-white rounded-full shadow-lg border-[0.125rem] border-brand-surface-1">
+                        <type.icon className="w-[2rem] h-[2rem] text-brand-primary" />
+                      </div>
+                      {/* Conteúdo */}
+                      <div className="flex-1 pt-[0.75rem]">
+                        <h3 className="text-[1.25rem] sm:text-[1.5rem] 2xl:text-[1.75rem] font-semibold mb-[0.5rem] text-text-primary">
+                          {type.title}
+                        </h3>
+                        <p className="text-[1rem] sm:text-[1.125rem] 2xl:text-[1.25rem] text-text-secondary">
+                          {type.description}
+                        </p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

@@ -78,24 +78,24 @@ const teamMembers = [
 
 export default function TeamSection() {
   return (
-    <section id="team" className="relative w-full py-20">
-      <div className="container mx-auto px-4 max-w-8xl">
+    <section id="team" className="relative w-full py-[5rem]">
+      <div className="w-[95%] lg:w-[90%] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-[3rem]"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+          <h2 className="text-[2rem] md:text-[2.5rem] font-bold mb-[1rem] text-gray-800">
             Nossa Equipe
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-[1.25rem] text-gray-600 max-w-[48rem] mx-auto">
             Conheça os pesquisadores e desenvolvedores por trás do projeto.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-[2rem]">
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
@@ -105,25 +105,25 @@ export default function TeamSection() {
               viewport={{ once: true }}
               className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <div className="md:p-4 p-3">
+              <div className="md:p-[1rem] p-[0.75rem]">
                 <div className="flex md:flex-col items-center md:text-center">
-                  <div className="relative w-12 h-12 md:w-20 md:h-20 md:mb-3 flex-shrink-0">
+                  <div className="relative w-[3rem] h-[3rem] md:w-[5rem] md:h-[5rem] md:mb-[0.75rem] flex-shrink-0">
                     <Image
                       src={member.imageUrl}
                       alt={member.name}
                       fill
-                      className="rounded-full object-cover border-2 border-purple-100"
+                      className="rounded-full object-cover border-[0.125rem] border-purple-100"
                     />
                   </div>
-                  <div className="ml-4 md:ml-0 flex-grow">
-                    <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-1">
+                  <div className="ml-[1rem] md:ml-0 flex-grow">
+                    <h3 className="text-[1.125rem] md:text-[1.25rem] font-semibold text-gray-800 mb-[0.25rem]">
                       {member.name}
                     </h3>
-                    <div className="flex gap-2 mb-3 flex-wrap md:justify-center">
+                    <div className="flex gap-[0.5rem] mb-[0.75rem] flex-wrap md:justify-center">
                       {member.tags.map((tag, tagIndex) => (
                         <span
                           key={tagIndex}
-                          className={`px-2 py-1 rounded-full text-xs font-medium ${
+                          className={`px-[0.5rem] py-[0.25rem] rounded-full text-[0.75rem] font-medium ${
                             tag === 'Coordenador'
                               ? 'bg-purple-100 text-purple-700'
                               : tag === 'Professor'
@@ -135,12 +135,12 @@ export default function TeamSection() {
                         </span>
                       ))}
                     </div>
-                    <p className="text-gray-600 text-sm md:block hidden">
+                    <p className="text-[0.875rem] md:text-[1rem] text-gray-600 md:block hidden">
                       {member.description}
                     </p>
                   </div>
                 </div>
-                <p className="text-gray-600 text-sm md:hidden mt-2 border-t pt-2">
+                <p className="text-[0.875rem] md:text-[1rem] text-gray-600 md:hidden mt-[0.5rem] border-t pt-[0.5rem]">
                   {member.description}
                 </p>
               </div>
