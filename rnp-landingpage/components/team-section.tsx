@@ -87,10 +87,10 @@ export default function TeamSection() {
           viewport={{ once: true }}
           className="text-center mb-[3rem]"
         >
-          <h2 className="text-[2rem] md:text-[2.5rem] font-bold mb-[1rem] text-gray-800">
+          <h2 className="text-[2rem] md:text-[2.5rem] font-bold mb-[1rem] text-text-primary">
             Nossa Equipe
           </h2>
-          <p className="text-[1.25rem] text-gray-600 max-w-[48rem] mx-auto">
+          <p className="text-[1.25rem] text-text-secondary max-w-[48rem] mx-auto">
             Conheça os pesquisadores e desenvolvedores por trás do projeto.
           </p>
         </motion.div>
@@ -112,11 +112,11 @@ export default function TeamSection() {
                       src={member.imageUrl}
                       alt={member.name}
                       fill
-                      className="rounded-full object-cover border-[0.125rem] border-purple-100"
+                      className="rounded-full object-cover border-[0.125rem] border-brand-surface-1"
                     />
                   </div>
                   <div className="ml-[1rem] md:ml-0 flex-grow">
-                    <h3 className="text-[1.125rem] md:text-[1.25rem] font-semibold text-gray-800 mb-[0.25rem]">
+                    <h3 className="text-[1.125rem] md:text-[1.25rem] font-semibold text-text-primary mb-[0.25rem]">
                       {member.name}
                     </h3>
                     <div className="flex gap-[0.5rem] mb-[0.75rem] flex-wrap md:justify-center">
@@ -125,22 +125,22 @@ export default function TeamSection() {
                           key={tagIndex}
                           className={`px-[0.5rem] py-[0.25rem] rounded-full text-[0.75rem] font-medium ${
                             tag === 'Coordenador'
-                              ? 'bg-purple-100 text-purple-700'
+                              ? 'bg-brand-surface-1 text-brand-primary'
                               : tag === 'Professor'
-                              ? 'bg-blue-100 text-blue-700'
-                              : 'bg-green-100 text-green-700'
+                              ? 'bg-brand-surface-2 text-brand-secondary'
+                              : 'bg-brand-surface-1/50 text-brand-primary/90'
                           }`}
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
-                    <p className="text-[0.875rem] md:text-[1rem] text-gray-600 md:block hidden">
+                    <p className="text-[0.875rem] md:text-[1rem] text-text-secondary md:block hidden">
                       {member.description}
                     </p>
                   </div>
                 </div>
-                <p className="text-[0.875rem] md:text-[1rem] text-gray-600 md:hidden mt-[0.5rem] border-t pt-[0.5rem]">
+                <p className="text-[0.875rem] md:text-[1rem] text-text-secondary md:hidden mt-[0.5rem] border-t pt-[0.5rem]">
                   {member.description}
                 </p>
               </div>

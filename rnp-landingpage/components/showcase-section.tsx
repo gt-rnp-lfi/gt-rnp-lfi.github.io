@@ -56,10 +56,10 @@ export default function ShowcaseSection() {
           viewport={{ once: true }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-2xl md:text-4xl font-bold mb-4 text-gray-800">
+          <h2 className="text-2xl md:text-4xl font-bold mb-4 text-text-primary">
             Aprenda Cibersegurança de Forma Inovadora
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto">
             Nossa plataforma combina gamificação, IA e casos reais para oferecer uma experiência de aprendizado única e eficaz.
           </p>
         </motion.div>
@@ -87,8 +87,8 @@ export default function ShowcaseSection() {
             viewport={{ once: true }}
             className="w-full"
           >
-            <h3 className="text-xl md:text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600">Plataforma Intuitiva</h3>
-            <p className="text-sm md:text-base text-gray-600 mb-6">
+            <h3 className="text-xl md:text-2xl font-bold mb-4 text-gradient-brand">Plataforma Intuitiva</h3>
+            <p className="text-sm md:text-base text-text-secondary mb-6">
               Nossa interface amigável torna o aprendizado de cibersegurança acessível e envolvente. 
               Acompanhe seu progresso, participe de desafios e interaja com outros alunos em um ambiente 
               gamificado projetado para maximizar seu aprendizado.
@@ -96,10 +96,10 @@ export default function ShowcaseSection() {
             <ul className="space-y-4">
               {features.map((feature, index) => (
                 <li key={index} className="flex items-start">
-                  <feature.icon className="w-5 h-5 md:w-6 md:h-6 text-purple-600 mr-2 flex-shrink-0" />
+                  <feature.icon className="w-5 h-5 md:w-6 md:h-6 text-brand-primary mr-2 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold text-gray-800 text-sm md:text-base">{feature.title}</h4>
-                    <p className="text-gray-600 text-sm md:text-base">{feature.description}</p>
+                    <h4 className="font-semibold text-text-primary text-sm md:text-base">{feature.title}</h4>
+                    <p className="text-text-secondary text-sm md:text-base">{feature.description}</p>
                   </div>
                 </li>
               ))}
@@ -115,8 +115,8 @@ export default function ShowcaseSection() {
             viewport={{ once: true }}
             className="order-2 md:order-1 w-full"
           >
-            <h3 className="text-xl md:text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600">Aprendizado Prático</h3>
-            <p className="text-sm md:text-base text-gray-600 mb-6">
+            <h3 className="text-xl md:text-2xl font-bold mb-4 text-gradient-brand">Aprendizado Prático</h3>
+            <p className="text-sm md:text-base text-text-secondary mb-6">
               Enfrente desafios baseados em incidentes reais, aplicando seus conhecimentos em cenários 
               práticos. Nossa plataforma utiliza IA para simular ameaças e guiar seu aprendizado, 
               preparando você para situações reais de cibersegurança.
@@ -124,10 +124,10 @@ export default function ShowcaseSection() {
             <ul className="space-y-4">
               {practicalFeatures.map((feature, index) => (
                 <li key={index} className="flex items-start">
-                  <feature.icon className="w-5 h-5 md:w-6 md:h-6 text-purple-600 mr-2 flex-shrink-0" />
+                  <feature.icon className="w-5 h-5 md:w-6 md:h-6 text-brand-primary mr-2 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold text-gray-800 text-sm md:text-base">{feature.title}</h4>
-                    <p className="text-gray-600 text-sm md:text-base">{feature.description}</p>
+                    <h4 className="font-semibold text-text-primary text-sm md:text-base">{feature.title}</h4>
+                    <p className="text-text-secondary text-sm md:text-base">{feature.description}</p>
                   </div>
                 </li>
               ))}

@@ -37,10 +37,10 @@ export default function TechSection() {
           viewport={{ once: true }}
           className="text-center mb-[3rem]"
         >
-          <h2 className="text-[2rem] md:text-[2.5rem] font-bold mb-[1rem] text-gray-800">
+          <h2 className="text-[2rem] md:text-[2.5rem] font-bold mb-[1rem] text-text-primary">
             Tecnologias Utilizadas
           </h2>
-          <p className="text-[1.25rem] text-gray-600 max-w-[48rem] mx-auto">
+          <p className="text-[1.25rem] text-text-secondary max-w-[48rem] mx-auto">
             Nossa plataforma é construída com as mais modernas tecnologias web para garantir performance e experiência do usuário.
           </p>
         </motion.div>
@@ -56,12 +56,12 @@ export default function TechSection() {
               className="bg-white rounded-lg shadow-lg p-[1.5rem] hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               <div className="flex items-center gap-[1rem]">
-                <div className="bg-purple-100 p-[0.75rem] rounded-lg">
-                  <tech.icon className="w-[2rem] h-[2rem] text-purple-600" />
+                <div className="bg-brand-surface-1 p-[0.75rem] rounded-lg">
+                  <tech.icon className="w-[2rem] h-[2rem] text-brand-primary" />
                 </div>
                 <div>
-                  <h3 className="text-[1.25rem] font-semibold text-gray-800">{tech.name}</h3>
-                  <p className="text-[1rem] text-gray-600 mt-[0.25rem]">{tech.description}</p>
+                  <h3 className="text-[1.25rem] font-semibold text-text-primary">{tech.name}</h3>
+                  <p className="text-[1rem] text-text-secondary mt-[0.25rem]">{tech.description}</p>
                 </div>
               </div>
             </motion.div>

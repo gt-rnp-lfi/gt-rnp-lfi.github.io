@@ -48,7 +48,7 @@ export default function HeroSection() {
         <Icon className={`${isCenter ? 'h-[3.5rem] w-[3.5rem] lg:h-[4rem] lg:w-[4rem]' : 'h-[2.5rem] w-[2.5rem]'} 
           text-brand-primary mb-[0.75rem] flex-shrink-0`} />
         <h3 className={`${isCenter ? 'text-[1.125rem] lg:text-[1.25rem]' : 'text-[0.875rem]'} 
-          font-semibold mb-[0.5rem] line-clamp-2 text-center`}>
+          font-semibold mb-[0.5rem] line-clamp-2 text-center text-text-primary`}>
           {title}
         </h3>
         {isCenter && (
@@ -59,9 +59,11 @@ export default function HeroSection() {
       </div>
     )
 
+    const containerClasses = "flex flex-col items-center justify-center text-center bg-white/90 backdrop-blur-sm p-5 sm:p-6 rounded-full shadow-md border border-brand-surface-1 aspect-square"
+
     if (isStatic) {
       return (
-        <div className="flex flex-col items-center justify-center text-center bg-white/90 backdrop-blur-sm p-5 sm:p-6 rounded-full shadow-md border border-brand-surface-1 aspect-square">
+        <div className={containerClasses}>
           {content}
         </div>
       )
@@ -69,7 +71,7 @@ export default function HeroSection() {
 
     return (
       <motion.div
-        className="flex flex-col items-center justify-center text-center bg-white/90 backdrop-blur-sm p-5 sm:p-6 rounded-full shadow-md border border-brand-surface-1 aspect-square"
+        className={containerClasses}
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5 }}

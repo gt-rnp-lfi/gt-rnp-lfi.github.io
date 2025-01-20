@@ -28,7 +28,7 @@ const contextItems = [
 
 export default function ContextSection() {
   return (
-    <section className="relative w-full bg-gradient-to-b from-white to-purple-50 overflow-hidden">
+    <section className="relative w-full bg-gradient-page overflow-hidden">
       <div className="absolute inset-0 w-full h-full -z-10">
         {/* Elementos decorativos similares se necessário */}
       </div>
@@ -40,10 +40,10 @@ export default function ContextSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-primary">
             Contexto da Cibersegurança
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
             Entenda a importância da segurança cibernética e como nossa plataforma se insere neste cenário crítico.
           </p>
         </motion.div>
@@ -58,11 +58,11 @@ export default function ContextSection() {
               viewport={{ once: true }}
               className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 text-center"
             >
-              <div className="flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-4 mx-auto">
-                <item.icon className="w-8 h-8 text-purple-600" />
+              <div className="flex items-center justify-center w-16 h-16 bg-brand-surface-1 rounded-full mb-4 mx-auto">
+                <item.icon className="w-8 h-8 text-brand-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">{item.title}</h3>
-              <p className="text-gray-600">{item.description}</p>
+              <h3 className="text-xl font-semibold mb-2 text-text-primary">{item.title}</h3>
+              <p className="text-text-secondary">{item.description}</p>
             </motion.div>
           ))}
         </div>
@@ -74,7 +74,7 @@ export default function ContextSection() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <p className="text-lg text-gray-700 max-w-4xl mx-auto">
+          <p className="text-lg text-text-secondary max-w-4xl mx-auto">
             Nossa plataforma foi desenvolvida para atender às crescentes demandas do campo da cibersegurança, 
             oferecendo uma abordagem inovadora e prática para o aprendizado de resposta a incidentes e 
             classificação de ameaças. Através de casos reais e tecnologias avançadas, preparamos os 

@@ -23,10 +23,10 @@ export default function NewsSection() {
           viewport={{ once: true }}
           className="text-center mb-[3rem]"
         >
-          <h2 className="text-[2rem] md:text-[2.5rem] font-bold mb-[1rem] text-gray-800">
+          <h2 className="text-[2rem] md:text-[2.5rem] font-bold mb-[1rem] text-text-primary">
             Notícias do GT-LFI
           </h2>
-          <p className="text-[1.25rem] text-gray-600 max-w-[48rem] mx-auto">
+          <p className="text-[1.25rem] text-text-secondary max-w-[48rem] mx-auto">
             Veja as ultimas noticias referentes ao GT-LFI.
           </p>
         </motion.div>
@@ -43,14 +43,14 @@ export default function NewsSection() {
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-[1rem]">
                 <div className="flex-1">
-                  <h3 className="text-[1.25rem] font-semibold mb-[0.5rem] text-gray-800">{item.title}</h3>
-                  <p className="text-[1rem] text-gray-600">{item.description}</p>
+                  <h3 className="text-[1.25rem] font-semibold mb-[0.5rem] text-text-primary">{item.title}</h3>
+                  <p className="text-[1rem] text-text-secondary">{item.description}</p>
                 </div>
                 <Link 
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-[0.5rem] text-purple-600 hover:text-purple-700 transition-colors whitespace-nowrap"
+                  className="flex items-center gap-[0.5rem] text-brand-primary hover:text-brand-primary/90 transition-colors whitespace-nowrap"
                 >
                   Ler mais
                   <ExternalLink className="w-[1rem] h-[1rem]" />
