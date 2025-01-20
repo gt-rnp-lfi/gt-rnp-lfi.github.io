@@ -7,35 +7,35 @@ const teamMembers = [
   {
     name: 'Dr. Rodrigo Sanches Miani',
     role: 'Coordenador',
-    description: 'Doutor em Engenharia Elétrica e pesquisador em Cibersegurança. Professor na Universidade Federal de Uberlândia (UFU).',
+    description: 'Doutor em Engenharia Elétrica e pesquisador em Cibersegurança. Professor na Universidade Federal de Uberlândia.',
     tags: ['Coordenador'],
     imageUrl: 'avatares/avatar-miani.jpg'
   },
   {
     name: 'Dr. Silvio Ereno Quincozes',
     role: 'Pesquisador',
-    description: 'Doutor em Ciência da Computação com foco em Cibersegurança. Professor na Universidade Federal do Pampa (UNIPAMPA).',
+    description: 'Doutor em Ciência da Computação com foco em Cibersegurança. Professor na Universidade Federal do Pampa.',
     tags: ['Professor'],
     imageUrl: 'avatares/avatar-ereno.jpg'
   },
   {
     name: 'Dr. Diego Luis Kreutz',
     role: 'Pesquisador',
-    description: 'Pesquisador em Cibersegurança e professor na Universidade Federal do Pampa (UNIPAMPA).',
+    description: 'Pesquisador em Cibersegurança e professor na Universidade Federal do Pampa.',
     tags: ['Professor'],
     imageUrl: 'avatares/avatar-kreutz.webp'
   },
   {
     name: 'Dr. Leandro Bertholdo',
     role: 'Pesquisador',
-    description: 'Doutor em redes com foco em segurança. Professor na Universidade Federal do Rio Grande do Sul (UFRGS).',
+    description: 'Doutor em redes com foco em segurança. Professor na Universidade Federal do Rio Grande do Sul.',
     tags: ['Professor'],
     imageUrl: 'avatares/avatar-bertholdo.png'
   },
   {
     name: 'Felipe Homrich Scherer',
     role: 'Pesquisador',
-    description: 'Estudante de Engenharia de Software pela Universidade Federal do Pampa.',
+    description: 'Graduando de Engenharia de Software pela Universidade Federal do Pampa.',
     tags: ['Bolsista'],
     imageUrl: 'avatares/avatar-felipe-scherer.png'
   },
@@ -47,7 +47,7 @@ const teamMembers = [
     imageUrl: 'avatares/avatar-dresch.png'
   },
   {
-    name: 'Sebastião Alves de Jesus Filho',
+    name: 'M.Sc. Sebastião Alves de Jesus Filho',
     role: 'Pesquisador',
     description: 'Doutorando em Ciência da Computação e Técnico de Laboratório de Informática na Universidade Federal de Uberlândia (UFU).',
     tags: ['Bolsista'],
@@ -124,11 +124,11 @@ export default function TeamSection() {
                         <span
                           key={tagIndex}
                           className={`px-[0.5rem] py-[0.25rem] rounded-full text-[0.75rem] font-medium ${
-                            tag === 'Coordenador'
-                              ? 'bg-brand-surface-1 text-brand-primary'
-                              : tag === 'Professor'
-                              ? 'bg-brand-surface-2 text-brand-secondary'
-                              : 'bg-brand-surface-1/50 text-brand-primary/90'
+                            tag.toLowerCase() === 'coordenador'
+                              ? 'bg-[hsl(210,80%,40%)] text-white'
+                              : tag.toLowerCase() === 'professor'
+                              ? 'bg-[hsl(150,60%,45%)] text-white'
+                              : 'bg-[hsl(290,60%,65%)] text-white'
                           }`}
                         >
                           {tag}
