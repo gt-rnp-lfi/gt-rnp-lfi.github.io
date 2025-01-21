@@ -33,6 +33,13 @@ const teamMembers = [
     imageUrl: 'avatares/avatar-bertholdo.png'
   },
   {
+    name: 'Dr. Rafael Dias Araújo',
+    role: 'Pesquisador',
+    description: 'Doutor em Ciência da Computação e pesquisador em Informática na Educação e Interação Humano-Computador. Professor na Universidade Federal de Uberlândia (UFU).',
+    tags: ['Professor'],
+    imageUrl: 'avatares/avatar-araujo.jpg'
+  },
+  {
     name: 'Felipe Homrich Scherer',
     role: 'Pesquisador',
     description: 'Graduando de Engenharia de Software pela Universidade Federal do Pampa.',
@@ -70,9 +77,9 @@ const teamMembers = [
   {
     name: 'João Pedro Ramires Esteves',
     role: 'Pesquisador',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+    description: 'Graduando em Ciências da Computação pela Universidade Federal de Uberlândia (UFU).',
     tags: ['bolsista'],
-    imageUrl: 'avatares/avatar-esteves.png'
+    imageUrl: 'avatares/avatar-esteves.jpg'
   },
 ]
 
@@ -95,7 +102,7 @@ export default function TeamSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-[2rem]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[2rem]">
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
