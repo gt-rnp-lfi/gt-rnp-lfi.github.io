@@ -54,7 +54,7 @@ const teamMembers = [
     imageUrl: 'avatares/avatar-dresch.png'
   },
   {
-    name: 'M.Sc. Sebastião Alves de Jesus Filho',
+    name: 'Me. Sebastião Alves de Jesus Filho',
     role: 'Pesquisador',
     description: 'Doutorando em Ciência da Computação e Técnico de Laboratório de Informática na Universidade Federal de Uberlândia (UFU).',
     tags: ['Bolsista'],
@@ -135,7 +135,7 @@ export default function TeamSection() {
                               ? 'bg-purple-100 text-purple-700'
                               : tag === 'Professor'
                               ? 'bg-blue-100 text-blue-700'
-                              : 'bg-cyan-100 text-cyan-700'
+                              : 'bg-emerald-100 text-emerald-700' // alternativa: 'bg-cyan-100 text-cyan-700'
                           }`}
                         >
                           {tag}
