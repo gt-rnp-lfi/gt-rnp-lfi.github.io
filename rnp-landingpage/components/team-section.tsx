@@ -64,21 +64,21 @@ const teamMembers = [
     name: 'Alvaro Santana',
     role: 'Pesquisador',
     description: 'Mestrando em Ciência da Computação pela UFU e Consultor de Soluções na empresa Accenture.',
-    tags: ['bolsista'],
+    tags: ['Bolsista'],
     imageUrl: 'avatares/avatar-santana.jpg'
   },
   {
     name: 'Carolina Bandel',
     role: 'Pesquisador',
     description: 'Graduanda em Gestão de Tecnologia da Informação pelo Senac SP.',
-    tags: ['bolsista'],
+    tags: ['Bolsista'],
     imageUrl: 'avatares/avatar-bandel.jpeg'
   },
   {
     name: 'João Pedro Ramires Esteves',
     role: 'Pesquisador',
     description: 'Graduando em Ciências da Computação pela Universidade Federal de Uberlândia (UFU).',
-    tags: ['bolsista'],
+    tags: ['Bolsista'],
     imageUrl: 'avatares/avatar-esteves.jpg'
   },
 ]
@@ -131,11 +131,11 @@ export default function TeamSection() {
                         <span
                           key={tagIndex}
                           className={`px-[0.5rem] py-[0.25rem] rounded-full text-[0.75rem] font-medium ${
-                            tag.toLowerCase() === 'coordenador'
-                              ? 'bg-[hsl(210,80%,40%)] text-white'
-                              : tag.toLowerCase() === 'professor'
-                              ? 'bg-[hsl(150,60%,45%)] text-white'
-                              : 'bg-[hsl(290,60%,65%)] text-white'
+                            tag === 'Coordenador'
+                              ? 'bg-purple-100 text-purple-700'
+                              : tag === 'Professor'
+                              ? 'bg-blue-100 text-blue-700'
+                              : 'bg-cyan-100 text-cyan-700'
                           }`}
                         >
                           {tag}

@@ -108,7 +108,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-brand-surface-1 rounded-full 
+            className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-orange-100 rounded-full 
               text-brand-primary font-medium text-[0.875rem] sm:text-[1rem] mb-4 sm:mb-6"
           >
             Programa Hackers do Bem
