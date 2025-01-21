@@ -35,6 +35,7 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+
     --brand-primary: 25 100% 50%;
     --brand-primary-light: 25 100% 97%;
     --brand-secondary: 45 100% 60%;
@@ -47,9 +48,45 @@ body {
       hsl(25 100% 50%) 60%,
       hsl(45 100% 60%) 100%
     );
-    --gradient-background: linear-gradient(to bottom, hsl(35 60% 97%), white);
+    --gradient-background: linear-gradient(to bottom, hsl(35 60% 97%), white);
+  
   }
-  /* 
+
+  /*
+  VERDE:
+
+  --brand-primary: 142 76% 36%;
+    --brand-primary-light: 142 76% 97%;
+    --brand-secondary: 160 84% 39%;
+    --brand-surface-1: 150 55% 95%;
+    --brand-surface-2: 145 65% 97%;
+    --text-primary: 155 15% 20%;
+    --text-secondary: 155 10% 45%;
+    --gradient-brand: linear-gradient(to right, 
+      hsl(142 76% 36%) 0%,
+      hsl(142 76% 36%) 60%,
+      hsl(160 84% 39%) 100%
+    );
+    --gradient-background: linear-gradient(to bottom, hsl(145 65% 97%), white);
+
+
+  LARANJA:
+
+  --brand-primary: 25 100% 50%;
+    --brand-primary-light: 25 100% 97%;
+    --brand-secondary: 45 100% 60%;
+    --brand-surface-1: 45 70% 95%;
+    --brand-surface-2: 35 60% 97%;
+    --text-primary: 30 15% 20%;
+    --text-secondary: 30 10% 45%;
+    --gradient-brand: linear-gradient(to right, 
+      hsl(25 100% 50%) 0%,
+      hsl(25 100% 50%) 60%,
+      hsl(45 100% 60%) 100%
+    );
+    --gradient-background: linear-gradient(to bottom, hsl(35 60% 97%), white);
+
+  
   ROXO:
 
     --brand-primary: 265 100% 60%;
@@ -67,6 +104,7 @@ body {
     --gradient-background: linear-gradient(to bottom, hsl(265 100% 98%), white)
   
   */
+  
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
