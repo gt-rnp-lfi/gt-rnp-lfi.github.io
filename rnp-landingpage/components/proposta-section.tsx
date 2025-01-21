@@ -11,9 +11,9 @@ const systemModules = [
     description: 'Sistema de IA para análise e resposta automática a incidentes',
     features: ['Análise preditiva', 'Respostas automatizadas', 'Aprendizado contínuo'],
     position: 'left',
-    accent: 'from-brand-primary to-brand-secondary',
-    iconBg: 'bg-brand-surface-1',
-    iconColor: 'text-brand-primary'
+    accent: 'from-purple-500 to-indigo-600',
+    iconBg: 'bg-purple-500/10',
+    iconColor: 'text-purple-600'
   },
   {
     icon: Workflow,
@@ -22,9 +22,9 @@ const systemModules = [
     description: 'Procedimentos operacionais padrão e workflows de resposta',
     features: ['Workflows personalizados', 'Documentação integrada', 'Métricas de eficiência'],
     position: 'center',
-    accent: 'from-brand-primary to-brand-secondary',
-    iconBg: 'bg-brand-surface-1',
-    iconColor: 'text-brand-primary'
+    accent: 'from-blue-500 to-cyan-600',
+    iconBg: 'bg-blue-500/10',
+    iconColor: 'text-blue-600'
   },
   {
     icon: Shield,
@@ -33,9 +33,9 @@ const systemModules = [
     description: 'Treinamento e certificação em segurança cibernética',
     features: ['Simulações realistas', 'Certificações', 'Mentoria especializada'],
     position: 'right',
-    accent: 'from-brand-primary to-brand-secondary',
-    iconBg: 'bg-brand-surface-1',
-    iconColor: 'text-brand-primary'
+    accent: 'from-emerald-500 to-teal-600',
+    iconBg: 'bg-emerald-500/10',
+    iconColor: 'text-emerald-600'
   }
 ]
 
@@ -92,7 +92,7 @@ export default function PropostaSection() {
                   <div className="w-[3rem] h-[3rem] 2xl:w-[3.5rem] 2xl:h-[3.5rem] bg-white rounded-2xl shadow-lg flex items-center justify-center transform -rotate-12 group-hover:rotate-0 transition-transform duration-300">
                     <module.secondaryIcon className="w-[1.5rem] h-[1.5rem] 2xl:w-[1.75rem] 2xl:h-[1.75rem] text-brand-primary" />
                   </div>
-                  <div className="w-[3rem] h-[3rem] 2xl:w-[3.5rem] 2xl:h-[3.5rem] bg-gradient-brand rounded-2xl shadow-lg flex items-center justify-center transform rotate-12 group-hover:rotate-0 transition-transform duration-300">
+                  <div className="w-[3rem] h-[3rem] 2xl:w-[3.5rem] 2xl:h-[3.5rem] bg-gradient-to-br from-brand-primary to-brand-secondary rounded-2xl shadow-lg flex items-center justify-center transform rotate-12 group-hover:rotate-0 transition-transform duration-300">
                     <module.icon className="w-[1.5rem] h-[1.5rem] 2xl:w-[1.75rem] 2xl:h-[1.75rem] text-white" />
                   </div>
                 </div>
