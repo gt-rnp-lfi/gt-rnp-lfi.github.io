@@ -9,77 +9,77 @@ const teamMembers = [
     role: 'Coordenador',
     description: 'Doutor em Engenharia Elétrica e pesquisador em Cibersegurança. Professor na Universidade Federal de Uberlândia.',
     tags: ['Coordenador'],
-    imageUrl: 'avatares/avatar-miani.jpg'
+    imageUrl: 'avatars/avatar-miani.jpg'
   },
   {
     name: 'Dr. Silvio Ereno Quincozes',
     role: 'Pesquisador',
     description: 'Doutor em Ciência da Computação com foco em Cibersegurança. Professor na Universidade Federal do Pampa.',
     tags: ['Professor'],
-    imageUrl: 'avatares/avatar-ereno.jpg'
+    imageUrl: 'avatars/avatar-ereno.jpg'
   },
   {
     name: 'Dr. Diego Luis Kreutz',
     role: 'Pesquisador',
     description: 'Pesquisador em Cibersegurança e professor na Universidade Federal do Pampa.',
     tags: ['Professor'],
-    imageUrl: 'avatares/avatar-kreutz.webp'
+    imageUrl: 'avatars/avatar-kreutz.webp'
   },
   {
     name: 'Dr. Leandro Bertholdo',
     role: 'Pesquisador',
     description: 'Doutor em redes com foco em segurança. Professor na Universidade Federal do Rio Grande do Sul.',
     tags: ['Professor'],
-    imageUrl: 'avatares/avatar-bertholdo.png'
+    imageUrl: 'avatars/avatar-bertholdo.png'
   },
   {
     name: 'Dr. Rafael Dias Araújo',
     role: 'Pesquisador',
     description: 'Doutor em Ciência da Computação e pesquisador em Informática na Educação e Interação Humano-Computador. Professor na Universidade Federal de Uberlândia (UFU).',
     tags: ['Professor'],
-    imageUrl: 'avatares/avatar-araujo.jpg'
+    imageUrl: 'avatars/avatar-araujo.jpg'
   },
   {
     name: 'Felipe Homrich Scherer',
     role: 'Pesquisador',
     description: 'Graduando de Engenharia de Software pela Universidade Federal do Pampa.',
     tags: ['Bolsista'],
-    imageUrl: 'avatares/avatar-felipe-scherer.png'
+    imageUrl: 'avatars/avatar-felipe-scherer.png'
   },
   {
     name: 'Felipe Nestor Dresch',
     role: 'Pesquisador',
     description: 'Graduando em Engenharia de Software pela Universidade Federal do Pampa e Técnico em Informática pelo IFRS.',
     tags: ['Bolsista'],
-    imageUrl: 'avatares/avatar-dresch.png'
+    imageUrl: 'avatars/avatar-dresch.png'
   },
   {
-    name: 'Me. Sebastião Alves de Jesus Filho',
+    name: 'Me. Sebastião A. de Jesus F.',
     role: 'Pesquisador',
     description: 'Doutorando em Ciência da Computação e Técnico de Laboratório de Informática na Universidade Federal de Uberlândia (UFU).',
     tags: ['Bolsista'],
-    imageUrl: 'avatares/avatar-filho.jpg'
+    imageUrl: 'avatars/avatar-filho.jpg'
   },
   {
     name: 'Alvaro Santana',
     role: 'Pesquisador',
     description: 'Mestrando em Ciência da Computação pela UFU e Consultor de Soluções na empresa Accenture.',
     tags: ['Bolsista'],
-    imageUrl: 'avatares/avatar-santana.jpg'
+    imageUrl: 'avatars/avatar-santana.jpg'
   },
   {
     name: 'Carolina Bandel',
     role: 'Pesquisador',
     description: 'Graduanda em Gestão de Tecnologia da Informação pelo Senac SP.',
     tags: ['Bolsista'],
-    imageUrl: 'avatares/avatar-bandel.jpeg'
+    imageUrl: 'avatars/avatar-bandel.jpeg'
   },
   {
     name: 'João Pedro Ramires Esteves',
     role: 'Pesquisador',
     description: 'Graduando em Ciências da Computação pela Universidade Federal de Uberlândia (UFU).',
     tags: ['Bolsista'],
-    imageUrl: 'avatares/avatar-esteves.jpg'
+    imageUrl: 'avatars/avatar-esteves.jpg'
   },
 ]
 
