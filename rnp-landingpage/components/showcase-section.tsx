@@ -141,7 +141,7 @@ export default function ShowcaseSection() {
             className="order-1 md:order-2 w-full"
           >
             <Image
-              src="/placeholder.svg?height=400&width=600"
+              src="/showcase-images/attack-simulation.jpg?height=400&width=600"
               alt="Simulação de incidente de segurança"
               width={600}
               height={400}
