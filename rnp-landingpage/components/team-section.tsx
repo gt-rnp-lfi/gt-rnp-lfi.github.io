@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { ExternalLink, GraduationCap } from 'lucide-react'
 
 const teamMembers = [
   {
@@ -16,7 +17,7 @@ const teamMembers = [
     role: 'Pesquisador',
     description: 'Doutor em Ciência da Computação com foco em Cibersegurança. Professor na Universidade Federal do Pampa.',
     tags: ['Professor'],
-    imageUrl: 'avatars/avatar-ereno.jpg'
+    imageUrl: 'avatars/avatar-ereno.jpg',
   },
   {
     name: 'Dr. Diego Luis Kreutz',
@@ -30,42 +31,47 @@ const teamMembers = [
     role: 'Pesquisador',
     description: 'Doutor em redes com foco em segurança. Professor na Universidade Federal do Rio Grande do Sul.',
     tags: ['Professor'],
-    imageUrl: 'avatars/avatar-bertholdo.png'
+    imageUrl: 'avatars/avatar-bertholdo.png', 
+    linkedin: 'https://www.linkedin.com/in/leandro-bertholdo-3379411/'
   },
   {
     name: 'Dr. Rafael Dias Araújo',
     role: 'Pesquisador',
-    description: 'Doutor em Ciência da Computação e pesquisador em Informática na Educação e Interação Humano-Computador. Professor na Universidade Federal de Uberlândia (UFU).',
+    description: 'Doutor em Ciência da Computação e pesquisador em Informática na Educação e Interação Humano-Computador. Professor na Universidade Federal de Uberlândia.',
     tags: ['Professor'],
     imageUrl: 'avatars/avatar-araujo.jpg'
   },
   {
     name: 'Felipe Homrich Scherer',
     role: 'Pesquisador',
-    description: 'Graduando de Engenharia de Software pela Universidade Federal do Pampa.',
+    description: 'Graduando de Engenharia de Software pela Universidade Federal do Pampa, com foco em pesquisas nas áreas de cibersegurança.',
     tags: ['Bolsista'],
-    imageUrl: 'avatars/avatar-felipe-scherer.png'
+    imageUrl: 'avatars/avatar-felipe-scherer.png',
+    linkedin: 'https://www.linkedin.com/in/felipehscherer/',
+    lattes: 'http://lattes.cnpq.br/0515811498958707' 
   },
   {
     name: 'Felipe Nestor Dresch',
     role: 'Pesquisador',
     description: 'Graduando em Engenharia de Software pela Universidade Federal do Pampa e Técnico em Informática pelo IFRS.',
     tags: ['Bolsista'],
-    imageUrl: 'avatars/avatar-dresch.png'
+    imageUrl: 'avatars/avatar-dresch.png',
+    linkedin: 'https://www.linkedin.com/in/felipe-dresch-066046237/'
   },
   {
     name: 'Me. Sebastião A. de Jesus F.',
     role: 'Pesquisador',
-    description: 'Doutorando em Ciência da Computação e Técnico de Laboratório de Informática na Universidade Federal de Uberlândia (UFU).',
+    description: 'Doutorando em Ciência da Computação e Técnico de Laboratório de Informática na Universidade Federal de Uberlândia.',
     tags: ['Bolsista'],
     imageUrl: 'avatars/avatar-filho.jpg'
   },
   {
     name: 'Alvaro Santana',
     role: 'Pesquisador',
-    description: 'Mestrando em Ciência da Computação pela UFU e Consultor de Soluções na empresa Accenture.',
+    description: 'Mestrando em Ciência da Computação pela Universidade Federal de Uberlândia e Consultor de Soluções na empresa Accenture.',
     tags: ['Bolsista'],
-    imageUrl: 'avatars/avatar-santana.jpg'
+    imageUrl: 'avatars/avatar-santana.jpg',
+    linkedin: 'https://www.linkedin.com/in/alvaro-s-santos/'
   },
   {
     name: 'Carolina Bandel',
@@ -77,7 +83,7 @@ const teamMembers = [
   {
     name: 'João Pedro Ramires Esteves',
     role: 'Pesquisador',
-    description: 'Graduando em Ciências da Computação pela Universidade Federal de Uberlândia (UFU).',
+    description: 'Graduando em Ciências da Computação pela Universidade Federal de Uberlândia.',
     tags: ['Bolsista'],
     imageUrl: 'avatars/avatar-esteves.jpg'
   },
@@ -110,8 +116,34 @@ export default function TeamSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 relative group"
             >
+              {/* Social Links - Repositioned */}
+              <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                {member.linkedin && (
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 flex items-center justify-center rounded-full bg-brand-surface-1 text-brand-primary hover:bg-brand-surface-2 transition-colors"
+                    title="LinkedIn"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                )}
+                {member.lattes && (
+                  <a
+                    href={member.lattes}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 flex items-center justify-center rounded-full bg-brand-surface-1 text-brand-primary hover:bg-brand-surface-2 transition-colors"
+                    title="Lattes"
+                  >
+                    <GraduationCap className="w-4 h-4" />
+                  </a>
+                )}
+              </div>
+
               <div className="md:p-[1rem] p-[0.75rem]">
                 <div className="flex md:flex-col items-center md:text-center">
                   <div className="relative w-[3rem] h-[3rem] md:w-[5rem] md:h-[5rem] md:mb-[0.75rem] flex-shrink-0">
@@ -132,10 +164,10 @@ export default function TeamSection() {
                           key={tagIndex}
                           className={`px-[0.5rem] py-[0.25rem] rounded-full text-[0.75rem] font-medium ${
                             tag === 'Coordenador'
-                              ? 'bg-purple-100 text-purple-700'
+                              ? 'bg-brand-surface-1 text-brand-primary'
                               : tag === 'Professor'
-                              ? 'bg-blue-100 text-blue-700'
-                              : 'bg-emerald-100 text-emerald-700' // alternativa: 'bg-cyan-100 text-cyan-700'
+                              ? 'bg-brand-surface-2 text-brand-secondary'
+                              : 'bg-emerald-100 text-emerald-700'
                           }`}
                         >
                           {tag}
