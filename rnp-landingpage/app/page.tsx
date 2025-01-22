@@ -7,7 +7,7 @@ import TeamSection from '../components/team-section'
 import Footer from '../components/footer'
 import IncidentSection from '../components/incident-section'
 import IncidentResponseSection from '../components/incident-response-section'
-import PropostaSection from '../components/proposta-section'
+import PropostaSection from '../components/proposal-section'
 
 export default function Home() {
   return (
