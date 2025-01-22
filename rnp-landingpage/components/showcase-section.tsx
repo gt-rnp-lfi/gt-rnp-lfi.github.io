@@ -73,9 +73,9 @@ export default function ShowcaseSection() {
             className="w-full"
           >
             <Image
-              src="/placeholder.svg?height=400&width=600"
+              src="/showcase-images/dashboard.png?height=400&width=600"
               alt="Dashboard da plataforma"
-              width={600}
+              width={600} 
               height={400}
               className="rounded-lg shadow-xl w-full h-auto"
             />
