@@ -19,11 +19,11 @@ export default function NavBar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="#features" className="text-text-secondary hover:text-brand-primary transition-colors">
-              Recursos
+            <Link href="#context" className="text-text-secondary hover:text-brand-primary transition-colors">
+              Contexto
             </Link>
-            <Link href="#about" className="text-text-secondary hover:text-brand-primary transition-colors">
-              Sobre
+            <Link href="#proposal" className="text-text-secondary hover:text-brand-primary transition-colors">
+              Proposta
             </Link>
             <Link href="#news" className="text-text-secondary hover:text-brand-primary transition-colors">
               Novidades
@@ -55,18 +55,18 @@ export default function NavBar() {
           <div className="md:hidden py-4">
             <div className="flex flex-col space-y-4">
               <Link
-                href="#features"
+                href="#context"
                 className="text-text-secondary hover:text-brand-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Recursos
+                Contexto
               </Link>
               <Link
-                href="#about"
+                href="#proposal"
                 className="text-text-secondary hover:text-brand-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Sobre
+                Proposta
               </Link>
               <Link
                 href="#news"

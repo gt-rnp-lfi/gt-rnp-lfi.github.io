@@ -41,7 +41,7 @@ const systemModules = [
 
 export default function PropostaSection() {
   return (
-    <section className="relative w-full py-[5rem] overflow-hidden">
+    <section id="proposal" className="relative w-full py-[5rem] overflow-hidden">
       <div className="w-[95%] lg:w-[90%] mx-auto">
         {/* Cabeçalho */}
         <motion.div
