@@ -164,9 +164,9 @@ export default function TeamSection() {
                           key={tagIndex}
                           className={`px-[0.5rem] py-[0.25rem] rounded-full text-[0.75rem] font-medium ${
                             tag === 'Coordenador'
-                              ? 'bg-brand-surface-1 text-brand-primary'
+                              ? 'bg-purple-100 text-purple-700'
                               : tag === 'Professor'
-                              ? 'bg-brand-surface-2 text-brand-secondary'
+                              ? 'bg-blue-100 text-blue-700'
                               : 'bg-emerald-100 text-emerald-700'
                           }`}
                         >
