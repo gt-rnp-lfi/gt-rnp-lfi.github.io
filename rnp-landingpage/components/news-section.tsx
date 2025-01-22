@@ -6,9 +6,9 @@ import Link from 'next/link'
 
 const newsItems = [
   {
-    title: 'Artigo Publicado - SBSeg 2025',
-    description: 'Que incidentes vem acontecendo todo mundo sabe, né?! Agora se liga nesse artigo que o GT-LFI publicou no SBSeg 2025 onde abordamos a importância de se ter um plano de contingência.',
-    link: 'https://exemplo.com/noticia-1'
+    title: 'Novidades em breve',
+    description: 'Que incidentes vem acontecendo todo mundo sabe, né?! Agora fica ligado que em breve teremos novidades aqui que podem te ajudar nesse assunto.',
+    link: 'https://novidadesembreve.com '
   }
 ]
 
