@@ -36,19 +36,19 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
 
-    --brand-primary: 25 100% 50%;
-    --brand-primary-light: 25 100% 97%;
-    --brand-secondary: 45 100% 60%;
-    --brand-surface-1: 45 70% 95%;
-    --brand-surface-2: 35 60% 97%;
-    --text-primary: 30 15% 20%;
-    --text-secondary: 30 10% 45%;
+    --brand-primary: 265 100% 60%;
+    --brand-primary-light: 265 100% 97%;
+    --brand-secondary: 220 100% 55%;
+    --brand-surface-1: 270 100% 96%;
+    --brand-surface-2: 265 100% 98%;
+    --text-primary: 220 10% 20%;
+    --text-secondary: 220 10% 45%;
     --gradient-brand: linear-gradient(to right, 
-      hsl(25 100% 50%) 0%,
-      hsl(25 100% 50%) 60%,
-      hsl(45 100% 60%) 100%
+      hsl(var(--brand-primary)) 0%,
+      hsl(var(--brand-primary)) 35%,
+      hsl(var(--brand-secondary)) 100%
     );
-    --gradient-background: linear-gradient(to bottom, hsl(35 60% 97%), white);
+    --gradient-background: linear-gradient(to bottom, hsl(265 100% 98%), white)
   
   }
 
