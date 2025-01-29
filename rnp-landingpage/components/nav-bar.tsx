@@ -15,7 +15,7 @@ export default function NavBar() {
           <Link href="/" className="flex items-center space-x-3 group">
             <Shield className="h-8 w-8 text-brand-primary transition-transform group-hover:scale-110" />
             <span className="font-bold text-xl text-text-primary group-hover:text-brand-primary transition-colors">
-              GT-LFI
+              GT-LFI - Learn From Incidents
             </span>
           </Link>
 
@@ -26,6 +26,7 @@ export default function NavBar() {
               { href: '#proposal', label: 'Proposta' },
               { href: '#news', label: 'Novidades' },
               { href: '#tech', label: 'Tecnologias' },
+              { href: '#sponsor', label: 'Apoio' },
               { href: '#team', label: 'Equipe' },
             ].map((item) => (
               <Link
@@ -61,6 +62,7 @@ export default function NavBar() {
                 { href: '#proposal', label: 'Proposta' },
                 { href: '#news', label: 'Novidades' },
                 { href: '#tech', label: 'Tecnologias' },
+                { href: '#sponsor', label: 'Apoio' },
                 { href: '#team', label: 'Equipe' },
               ].map((item) => (
                 <Link

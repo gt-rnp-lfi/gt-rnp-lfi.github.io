@@ -8,6 +8,7 @@ import Footer from '../components/footer'
 import IncidentSection from '../components/incident-section'
 import IncidentResponseSection from '../components/incident-response-section'
 import PropostaSection from '../components/proposal-section'
+import SponsorSection from '../components/sponsor-section'
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <ShowcaseSection />
       <NewsSection />
       <TechSection />
+      <SponsorSection />
       <TeamSection />
       <Footer />
     </main>

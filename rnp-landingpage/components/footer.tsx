@@ -19,7 +19,7 @@ export default function Footer() {
             <div className="col-span-1 md:col-span-2">
               <Link href="/" className="flex items-center space-x-2 mb-4">
                 <Shield className="h-8 w-8 text-brand-primary" />
-                <span className="font-bold text-xl text-text-primary">CyberLearn</span>
+                <span className="font-bold text-xl text-text-primary">GT-LFI - Learn from Incidents</span>
               </Link>
               <p className="text-text-secondary mb-4">
                 Uma plataforma gamificada que utiliza IA para transformar o aprendizado 
@@ -47,6 +47,11 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="#sponsor" className="text-text-secondary hover:text-brand-primary transition-colors">
+                    Apoio
+                  </Link>
+                </li>
+                <li>
                   <Link href="#team" className="text-text-secondary hover:text-brand-primary transition-colors">
                     Equipe
                   </Link>
@@ -60,10 +65,10 @@ export default function Footer() {
               <ul className="space-y-2">
                 <li>
                   <a 
-                    href="mailto:contato@gt-lfi.com.br" 
+                    href="mailto:rodrigomiani@gmail.com" 
                     className="text-brand-primary hover:text-brand-secondary transition-colors"
                   >
-                    contato@gt-lfi.com.br
+                    rodrigomiani@gmail.com
                   </a>
                 </li>
               </ul>
@@ -74,7 +79,7 @@ export default function Footer() {
           <div className="border-t border-brand-primary-light pt-6 mt-6">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-text-secondary text-sm mb-4 md:mb-0">
-                © 2024 GT-LFI - Learning from Incidents. Todos os direitos reservados.
+                © 2024 GT-LFI - Learn from Incidents. Todos os direitos reservados.
               </p>
               <div className="flex space-x-6">
                 <Link 
