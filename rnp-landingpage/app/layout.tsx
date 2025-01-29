@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CyberLearn",
+  title: "GT-LFI",
   description: "Aprenda Cibersegurança de Maneira Gamificada.",
 };
 
