@@ -15,7 +15,7 @@ export default function NavBar() {
           <Link href="/" className="flex items-center space-x-3 group">
             <Shield className="h-8 w-8 text-brand-primary transition-transform group-hover:scale-110" />
             <span className="font-bold text-xl text-text-primary group-hover:text-brand-primary transition-colors">
-              CyberLearn
+              GT-LFI
             </span>
           </Link>
 
