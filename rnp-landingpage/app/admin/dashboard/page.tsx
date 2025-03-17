@@ -3,7 +3,6 @@
 import { useEffect, useState, useCallback } from "react";
 import { collection, addDoc, getDocs, doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { db } from "@/lib/firebaseconfig";
-import { auth } from "@/lib/firebaseconfig";
 import { useRouter } from "next/navigation";
 
 interface NewsItem {
@@ -33,17 +32,8 @@ export default function Dashboard() {
   }, []);
 
   useEffect(() => {
-    const user = auth.currentUser;
-    if (!user || user.email !== process.env.NEXT_PUBLIC_FIREBASE_EMAIL_AUTHENTICATION) {
-      router.push("/admin/login");
-    }
     fetchNews();
-  }, [router, fetchNews]);
-
-  const handleLogout = async () => {
-    await auth.signOut();
-    router.push("/admin/login");
-  };
+  }, [fetchNews]);
 
   const addNews = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -103,17 +93,9 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
+    <div className="p-6">
       <div className="max-w-4xl mx-auto">
-        <div className="flex justify-between items-center mb-8">
-          <h2 className="text-2xl font-bold text-gray-800">Painel de Admin</h2>
-          <button
-            onClick={handleLogout}
-            className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
-          >
-            Sair
-          </button>
-        </div>
+        <h2 className="text-2xl font-bold text-gray-800 mb-8">Notícias</h2>
 
         {editingNews ? (
           <div className="bg-white p-6 rounded-lg shadow-md mb-6">
@@ -159,7 +141,7 @@ export default function Dashboard() {
           </div>
         ) : (
           <div className="bg-white p-6 rounded-lg shadow-md mb-6">
-            <h3 className="text-xl font-bold mb-4">Adicionar Nova Notícia</h3>
+            <h3 className="text-xl font-bold mb-4">Adicionar nova notícia</h3>
             <form onSubmit={addNews} className="space-y-4">
               <input
                 type="text"

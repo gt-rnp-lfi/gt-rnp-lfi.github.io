@@ -1,26 +1,30 @@
 "use client"
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/lib/firebaseconfig";
 import { useRouter } from "next/navigation";
+import { useAuth } from "../../contexts/AuthContext";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const { user } = useAuth();
+
+  useEffect(() => {
+    if (user) {
+      router.push("/admin/dashboard");
+    }
+  }, [user, router]);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      if (userCredential.user.email === process.env.NEXT_PUBLIC_FIREBASE_EMAIL_AUTHENTICATION) {
-        router.push("/admin/dashboard");
-      } else {
-        alert("Acesso negado!");
-      }
+      await signInWithEmailAndPassword(auth, email, password);
+      router.push("/admin/dashboard");
     } catch (error: unknown) {
       console.log(error);
       alert("Erro ao fazer login");
@@ -28,6 +32,15 @@ export default function LoginPage() {
       setLoading(false);
     }
   };
+
+  // Se estiver carregando ou já autenticado, não renderiza o formulário
+  if (loading || user) {
+    return (
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
