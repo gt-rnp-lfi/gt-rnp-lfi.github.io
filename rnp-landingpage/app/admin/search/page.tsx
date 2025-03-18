@@ -50,6 +50,7 @@ export default function SearchPage() {
         throw new Error((data as ErrorResponse).message || 'Erro na busca');
       }
 
+      // Agora podemos usar diretamente a resposta da API
       setSearchData(data as SearchResponse);
     } catch (error) {
       console.error('Erro na busca:', error);
@@ -125,24 +126,26 @@ export default function SearchPage() {
           </div>
         )}
 
-        {searchData && (
-          <>
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
-              <div className="flex items-start space-x-2">
-                <div className="space-y-1">
-                  <p className="text-blue-800">
-                    <strong>Total de incidentes encontrados:</strong> {searchData.metrics.totalFound}
-                  </p>
-                  <p className="text-blue-800">
-                    <strong>Incidentes retornados:</strong> {searchData.metrics.totalReturned}
-                  </p>
-                  <p className="text-blue-800">
-                    <strong>Similaridade média dos resultados retornados:</strong> {(searchData.metrics.averageSimilarity * 100).toFixed(1)}%
-                  </p>                 
-                </div>
+        {searchData && searchData.metrics && (
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+            <div className="flex items-start space-x-2">
+              <div className="space-y-1">
+                <p className="text-blue-800">
+                  <strong>Total de incidentes encontrados:</strong> {searchData.metrics.totalFound}
+                </p>
+                <p className="text-blue-800">
+                  <strong>Incidentes retornados:</strong> {searchData.metrics.totalReturned}
+                </p>
+                <p className="text-blue-800">
+                  <strong>Similaridade média dos resultados retornados:</strong> {(searchData.metrics.averageSimilarity * 100).toFixed(1)}%
+                </p>                 
               </div>
             </div>
+          </div>
+        )}
 
+        {searchData && searchData.results && (
+          <>
             <div className="space-y-4">
               {searchData.results.map((result) => (
                 <div key={result.id} className="bg-white p-6 rounded-lg shadow-md">
@@ -169,7 +172,7 @@ export default function SearchPage() {
           </>
         )}
 
-        {searchData && searchData.results.length === 0 && (
+        {searchData && searchData.results && searchData.results.length === 0 && (
           <div className="bg-white p-6 rounded-lg shadow-md text-center">
             <p className="text-gray-600">Nenhum resultado encontrado para sua busca.</p>
           </div>
