@@ -1,7 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { SiTypescript, SiReact, SiNextdotjs, SiTailwindcss } from 'react-icons/si'
+import { SiTypescript, SiReact, SiNextdotjs, SiTailwindcss, SiExpress, SiFirebase } from 'react-icons/si'
+import { TbBrandGoogleFilled, TbDatabase } from 'react-icons/tb'
+import { VscSymbolNamespace } from 'react-icons/vsc'
 
 const technologies = [
   {
@@ -23,6 +25,31 @@ const technologies = [
     icon: SiTailwindcss,
     name: 'Tailwind CSS',
     description: 'Framework CSS utilitário para design rápido e responsivo.'
+  },
+  {
+    icon: SiExpress,
+    name: 'Express.js',
+    description: 'Framework web rápido e minimalista para Node.js.'
+  },
+  {
+    icon: TbBrandGoogleFilled,
+    name: 'Google Gemini',
+    description: 'Modelo de IA avançado do Google para processamento de linguagem natural.'
+  },
+  {
+    icon: VscSymbolNamespace,
+    name: 'Vercel AI SDK',
+    description: 'SDK para integração simplificada de modelos de IA em aplicações web.'
+  },
+  {
+    icon: TbDatabase,
+    name: 'Pinecone',
+    description: 'Banco de dados vetorial para busca semântica e similaridade.'
+  },
+  {
+    icon: SiFirebase,
+    name: 'Firebase',
+    description: 'Plataforma de desenvolvimento que oferece diversos serviços backend como serviço.'
   }
 ]
 
